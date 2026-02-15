@@ -54,7 +54,7 @@ To view the site, open the GitHub Pages URL for this repository in a browser.
 ## Contact
 
 - Email: `fbocoum1@student.ccc.edu`  
-- GitHub: `https://github.com/Fbocoum1`  
-- Location: Chicago, IL, USA
-
-- LinkedIn: *(add your URL here when you have it handy)*
+- GitHub: `https://github.com/Fbocoum1`
+- 👉 https://fbocoum1.github.io/Networking-portfolio/
+-   Location: Chicago, IL, USA
+ LinkedIn: *(add your URL here when you have it handy)*
