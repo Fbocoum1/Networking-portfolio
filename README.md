@@ -10,7 +10,7 @@ I am a Networking Systems & Technologies student at Olive-Harvey College (City C
 
 **Core fundamentals (studied in class / labs)**  
 - TCP/IP protocol suite, OSI model and network layers  
-- Subnetting and IP addressing (IPv4)  
+- Subnetting and IP addressing (IPv4) (IPv6) 
 - DNS, DHCP, NAT  
 - VLANs, trunking, basic switching and bridging  
 
