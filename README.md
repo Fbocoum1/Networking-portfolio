@@ -26,7 +26,15 @@ I am a Networking Systems & Technologies student at Olive-Harvey College (City C
 
 ### Tools & Software
 - Cisco Packet Tracer, Wireshark
-- Microsoft Word, Excel, PowerPoint
+- Microsoft Word, Excel, PowerPoint### Tools & Software
+- Cisco Packet Tracer, Wireshark
+- Microsoft Word, Excel, **PowerPoint**
+- Network documentation and technical presentations
+
+### Documentation & Presentations
+- Network diagrams, topology maps, configuration documentation
+- PowerPoint presentations for technical projects and labs
+- Lab reports and network design documentation
 
 ### Operating Systems
 - Windows Server administration in a lab environment
