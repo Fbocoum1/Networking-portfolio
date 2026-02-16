@@ -41,6 +41,13 @@ I am a Networking Systems & Technologies student at Olive-Harvey College (City C
 - CIS 103: Python programming fundamentals
 - NETTEC 221: Advanced networking (final class to graduate)
 
+- ## Certifications
+✅ **Networking Systems & Technologies Certificate** - Olive-Harvey College  
+🔄 **Planned after graduation:**  
+- CompTIA Network+  
+- Basic Cybersecurity Certificate  
+- Advanced Cloud Computing Certificate 
+
 ## Education
 - **Networking Systems & Technologies** - Olive-Harvey College (Chicago) - May 2026
 - **Financial Accounting Technician** - IUG Bamako (Mali) - Completed
