@@ -6,7 +6,7 @@ This repository contains my personal networking portfolio site, hosted with **Gi
 
 **[Live Portfolio →](https://fbocoum1.github.io/Networking-portfolio/)**
 
-## 👩‍💼 About Me
+## 💁‍♀️ About Me
 
 I'm a **Networking Systems & Technologies student** at **Olive-Harvey College** (City Colleges of Chicago), graduating **May 2026**. 
 
