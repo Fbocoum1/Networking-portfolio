@@ -23,6 +23,7 @@ After moving to the United States and working while studying on and off, I decid
 - Subnetting and IP addressing (IPv4/IPv6)
 - DNS, DHCP, NAT
 - VLANs, trunking, basic switching and bridging
+- Networking troubleshooting and diagnostics
 
 ### Hands-On Networking Labs
 - **Cisco Packet Tracer**: router and switch configuration, VLANs, WLANs, inter-VLAN connectivity
