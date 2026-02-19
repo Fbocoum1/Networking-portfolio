@@ -1,95 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Fatoumata Bocoum | Networking Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, sans-serif; }
-    body { background: #0f172a; color: #e5e7eb; min-height: 100vh; }
-    header { position: sticky; top: 0; background: rgba(15,23,42,0.95); padding: 1rem 0; }
-    nav { max-width: 960px; margin: 0 auto; padding: 0 1.25rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-weight: 700; color: #fbbf24; }
-    .nav-links a { color: #cbd5f5; text-decoration: none; margin-left: 1rem; }
-    main { max-width: 960px; margin: 2rem auto; padding: 0 1.25rem; }
-    .hero { display: grid; grid-template-columns: 3fr 2fr; gap: 2rem; margin-bottom: 3rem; }
-    .hero h1 { font-size: 2.5rem; color: #f9fafb; margin-bottom: 0.5rem; }
-    .card { background: rgba(15,23,42,0.95); padding: 1.5rem; border-radius: 1rem; margin-bottom: 1.5rem; border: 1px solid rgba(148,163,184,0.3); }
-    .skill-tag { display: inline-block; background: rgba(56,189,248,0.2); border: 1px solid rgba(56,189,248,0.5); padding: 0.25rem 0.75rem; border-radius: 999px; margin: 0.25rem; font-size: 0.85rem; color: #e0f2fe; }
-    h2 { color: #f9fafb; margin-bottom: 1rem; font-size: 1.5rem; }
-    @media (max-width: 768px) { .hero { grid-template-columns: 1fr; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking Portfolio - Fatoumata Bocoum</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .main {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .card {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            transform: translateY(0);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Profile Picture Styles */
+        .profile-section {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid rgba(255,255,255,0.5);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .profile-pic:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 45px rgba(102,126,234,0.4);
+        }
+        
+        .profile-name {
+            font-size: 2.2rem;
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-title {
+            color: #667eea;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        .skill {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.4rem 1rem;
+            margin: 0.3rem 0.3rem 0.3rem 0;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        ul li::before {
+            content: "▸";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .cert-check {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .contact-links a {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .card {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .profile-pic {
+                width: 140px;
+                height: 140px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">Fatoumata Bocoum</div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero" id="about">
-      <div>
-        <h1>Multilingual Networking Student</h1>
-        <p>Networking Systems & Technologies at Olive-Harvey College. Building networks from Mali to Chicago.</p>
-        <p>Testing Specialist | Financial Accounting background | Chicago, IL | Available May 2026</p>
-        <p><a href="mailto:fbocoum1@student.ccc.edu">Email</a> | <a href="https://github.com/Fbocoum1">GitHub</a></p>
-      </div>
-      <div class="card">
-        <h3>Quick Profile</h3>
-        <ul style="list-style: none; padding: 0;">
-          <li>Languages: English, French, Bambara, Poular</li>
-          <li>Current: Testing Specialist, Olive-Harvey College</li>
-          <li>Goal: Networking internship/entry-level May 2026</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="card">
-        <h3>Networking</h3>
-        <span class="skill-tag">OSI Model, TCP/IP</span>
-        <span class="skill-tag">Cisco Packet Tracer</span>
-        <span class="skill-tag">VLANs, Subnetting</span>
-        <span class="skill-tag">Windows Server labs</span>
-        <span class="skill-tag">Linux basics</span>
-      </div>
-      <div class="card">
-        <h3>Tools & Certs</h3>
-        <span class="skill-tag">Networking Certificate (earned)</span>
-        <span class="skill-tag">Network+ (planned)</span>
-        <span class="skill-tag">AWS/Azure basics</span>
-        <span class="skill-tag">HTML/CSS/JS</span>
-        <span class="skill-tag">Python (CIS 103)</span>
-      </div>
-    </section>
-
-    <section id="experience">
-      <h2>Education & Experience</h2>
-      <div class="card">
-        <strong>Olive-Harvey College</strong> · Networking Systems (May 2026)
-        <br><small>Chicago, IL</small>
-      </div>
-      <div class="card">
-        <strong>Testing Specialist</strong> · Olive-Harvey College
-        <br><small>Chicago, IL (part-time)</small>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="card">
-        <p>Available May 2026 for networking internships/entry-level roles.</p>
-        <p><a href="mailto:fbocoum1@student.ccc.edu">fbocoum1@student.ccc.edu</a> | (773) 707-6813</p>
-      </div>
-    </section>
-  </main>
+    <div class="main">
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Profile Picture Section -->
+        <div class="card">
+            <div class="profile-section">
+                <!-- REPLACE "your-photo.jpg" with your actual photo filename -->
+                <img src="your-photo.jpg" alt="Fatoumata Bocoum" class="profile-pic">
+                <h1 class="profile-name">Fatoumata Bocoum</h1>
+                <p class="profile-title">Networking Systems & Technologies Student</p>
+                <p style="color: #666; font-size: 1.1rem; margin-top: 0.5rem;">
+                    Olive-Harvey College • Graduating May 2026
+                </p>
+            </div>
+        </div>
+        
+        <div id="about" class="card">
+            <h2>👩‍💼 About Me</h2>
+            <p>I'm a Networking Systems & Technologies student at <strong>Olive-Harvey College</strong> (City Colleges of Chicago), graduating in May 2026. I first earned a Financial Accounting Technician diploma from Institut Universitaire de Gestion (IUG) in Bamako, Mali, and completed internships at Direction Administrative des Finances and Income Tax Perception.</p>
+            <p>After moving to the United States and working while studying on and off, I decided to return to school to pursue my passion for <strong>computer networking</strong>. I currently work part-time as a Testing Specialist at Olive-Harvey College and as a package handler at UPS.</p>
+            <p>I speak <strong>English, French, Bambara, and Poular</strong>.</p>
+        </div>
+        
+        <div id="skills" class="card">
+            <h2>🛠️ Skills & Knowledge</h2>
+            
+            <h3>Core Networking Fundamentals</h3>
+            <div class="skills-grid">
+                <span class="skill">TCP/IP protocol suite</span>
+                <span class="skill">OSI model</span>
+                <span class="skill">Subnetting IPv4/IPv6</span>
+                <span class="skill">DNS, DHCP, NAT</span>
+                <span class="skill">VLANs, trunking</span>
+            </div>
+            
+            <h3>Hands-On Networking Labs</h3>
+            <div class="skills-grid">
+                <span class="skill">Cisco Packet Tracer</span>
+                <span class="skill">Router/switch config</span>
+                <span class="skill">Windows Server 2019</span>
+                <span class="skill">Active Directory</span>
+                <span class="skill">Linux + Apache</span>
+            </div>
+            
+            <h3>Current Courses</h3>
+            <div class="skills-grid">
+                <span class="skill">CIS 260: Web Development</span>
+                <span class="skill">CIS 103: Python</span>
+                <span class="skill">NETTEC 221: Advanced Networking</span>
+            </div>
+            
+            <h3>Certifications</h3>
+            <ul>
+                <li><span class="cert-check">✅ Networking Systems & Technologies Certificate</span> - Olive-Harvey College</li>
+                <li>🔄 Planned: CompTIA Network+</li>
+                <li>🔄 Planned: Basic Cybersecurity Certificate</li>
+                <li>🔄 Planned: Advanced Cloud Computing Certificate</li>
+            </ul>
+        </div>
+        
+        <div id="contact" class="card">
+            <h2>📬 Contact</h2>
+            <div class="contact-links">
+                <a href="mailto:fbocoum1@student.ccc.edu">✉️ Email Me</a>
+                <a href="https://github.com/Fbocoum1" target="_blank">🐙 GitHub</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
