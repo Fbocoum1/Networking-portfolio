@@ -54,13 +54,16 @@
             z-index: 1000;
         }
         nav {
-             position: fixed;
-             top: 0;
-             left: 0;
-             width: 100%;
-             z-index: 999;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;          /* stretch across the page */
+            margin: 0 auto;    /* center nav content */
+            width: 100%;
+            max-width: 1200px; /* optional: match your card width */
+            z-index: 999;
         }
-        
+
         nav ul {
             list-style: none;
             display: flex;
@@ -366,6 +369,7 @@
     </script>
 </body>
 </html>
+
 
 
 
