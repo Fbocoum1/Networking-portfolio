@@ -20,54 +20,25 @@
             overflow-x: hidden;
         }
         
-        .main {
-            min-height: 100vh;
-            position: relative;
-            padding: 20px;
-        }
-       
-
-/* whatever wraps your cards/sections */
-.main {
-  margin-top: 105px;   /* adjust until menu no longer covers text on phone */
-}
-
-@media (min-width: 768px) {
-  .main {
-    margin-top: 90px;  /* a bit smaller margin for desktop, if needed */
-  }
-}
-
-        
-        
-        /* Navigation - Fixed Top */
-        nav {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
+        /* Fixed Navigation Bar - CLEAN VERSION */
         nav {
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;          /* stretch across the page */
-            margin: 0 auto;    /* center nav content */
             width: 100%;
-            max-width: 1200px; /* optional: match your card width */
-            z-index: 999;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.75rem 1.5rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            z-index: 1000;
         }
-
+        
         nav ul {
             list-style: none;
             display: flex;
             gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         
         nav a {
@@ -86,11 +57,18 @@
             transform: translateY(-2px);
         }
         
-        /* Content Sections - Hidden by Default */
+        .main {
+            min-height: 100vh;
+            position: relative;
+            padding: 20px;
+            margin-top: 80px;  /* Space for fixed nav */
+        }
+        
+        /* Content Sections */
         .content-section {
             display: none;
             max-width: 900px;
-            margin: 100px auto 0;
+            margin: 0 auto;
             min-height: 70vh;
         }
         
@@ -234,12 +212,15 @@
         @media (max-width: 768px) {
             nav ul {
                 gap: 1rem;
-                flex-wrap: wrap;
             }
             
             nav a {
                 padding: 0.5rem 1rem;
                 font-size: 0.95rem;
+            }
+            
+            .main {
+                margin-top: 90px;
             }
             
             .card {
@@ -304,7 +285,6 @@
                     <span class="skill">DNS, DHCP, NAT</span>
                     <span class="skill">VLANs, trunking</span>
                     <span class="skill">Network troubleshooting</span>
-                    
                 </div>
                 
                 <h3 style="color: #333; margin: 2rem 0 1rem 0; font-size: 1.5rem;">Hands-On Networking Labs</h3>
@@ -333,7 +313,6 @@
             </div>
         </div>
 
-        <!-- Contact Section -->
         <div id="contact" class="content-section">
             <div class="card">
                 <h2>📬 Let's Connect</h2>
@@ -350,28 +329,17 @@
 
     <script>
         function showSection(sectionId) {
-            // Hide all sections
             document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.remove('active');
             });
             
-            // Remove active from all nav links
             document.querySelectorAll('nav a').forEach(link => {
                 link.classList.remove('active');
             });
             
-            // Show selected section
             document.getElementById(sectionId).classList.add('active');
-            
-            // Add active to clicked link
             event.target.classList.add('active');
         }
     </script>
 </body>
 </html>
-
-
-
-
-
-
