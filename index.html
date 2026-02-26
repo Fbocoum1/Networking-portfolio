@@ -1,346 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Networking Portfolio - Fatoumata Y Bocoum</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        
-        /* Fixed Navigation Bar - CLEAN VERSION */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            padding: 0.75rem 1.5rem;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        nav a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            display: block;
-        }
-        
-        nav a:hover, nav a.active {
-            background: #667eea;
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .main {
-            min-height: 100vh;
-            position: relative;
-            padding: 20px;
-            margin-top: 80px;  /* Space for fixed nav */
-        }
-        
-        /* Content Sections */
-        .content-section {
-            display: none;
-            max-width: 900px;
-            margin: 0 auto;
-            min-height: 70vh;
-        }
-        
-        .content-section.active {
-            display: block;
-            animation: fadeIn 0.5s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .card {
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        /* Profile Picture */
-        .profile-section {
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 8px solid rgba(255,255,255,0.6);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .profile-pic:hover {
-            transform: scale(1.05);
-            box-shadow: 0 25px 50px rgba(102,126,234,0.4);
-        }
-        
-        .profile-name {
-            font-size: 2.5rem;
-            color: #333;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .profile-title {
-            color: #667eea;
-            font-size: 1.3rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-        
-        .card h2 {
-            color: #667eea;
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-        
-        .skill {
-            display: inline-block;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 0.5rem 1.2rem;
-            margin: 0.4rem 0.4rem 0.4rem 0;
-            border-radius: 25px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-        
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            justify-content: center;
-            margin: 1.5rem 0;
-        }
-        
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        ul li {
-            padding: 0.75rem 0;
-            position: relative;
-            padding-left: 2rem;
-            font-size: 1.1rem;
-        }
-        
-        ul li::before {
-            content: "▸";
-            color: #667eea;
-            font-weight: bold;
-            font-size: 1.5rem;
-            position: absolute;
-            left: 0;
-        }
-        
-        .cert-check {
-            color: #28a745;
-            font-weight: bold;
-            font-size: 1.3em;
-        }
-        
-        .contact-links {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-        
-        .contact-links a {
-            display: inline-block;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-links a:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
-        }
-        
-        @media (max-width: 700px) {
-            nav ul {
-                gap: 1rem;
-            }
-            
-            nav a {
-                padding: 0.5rem 1rem;
-                font-size: 0.95rem;
-            }
-            
-            .main {
-                margin-top: 130px;
-            }
-            
-            .card {
-                padding: 2rem;
-                margin: 0 10px;
-            }
-            
-            .profile-pic {
-                width: 160px;
-                height: 160px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Fatoumata Y Bocoum | Networking Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    /* ===== Global styles ===== */
+    :root {
+      --bg-gradient: linear-gradient(135deg, #5b6bff, #a14bff);
+      --card-bg: #ffffff;
+      --text-main: #222222;
+      --text-muted: #555555;
+      --accent: #5b6bff;
+      --accent2: #a14bff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg-gradient);
+      min-height: 100vh;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+      background: var(--bg-gradient);
+      color: #ffffff;
+    }
+
+    /* Mobile: stack nav links if needed */
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+    }
+
+    /* ===== Layout ===== */
+    .main {
+      max-width: 960px;
+      width: 100%;
+      padding: 7rem 1rem 3rem; /* top padding so cards are not hidden by nav */
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .main {
+        padding-top: 8.5rem; /* extra space on phones */
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 1.25rem;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+      padding: 2.25rem 1.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .card {
+        padding: 2.5rem 2.5rem;
+      }
+    }
+
+    .card h1,
+    .card h2,
+    .card h3 {
+      margin-bottom: 0.75rem;
+      color: var(--text-main);
+    }
+
+    .card p {
+      margin-bottom: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ===== Home card ===== */
+    .home-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .profile-photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      margin-bottom: 1rem;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .home-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .home-subtitle {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .home-meta {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .bio {
+      margin-top: 0.5rem;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    /* ===== Skills / badges ===== */
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      background: var(--bg-gradient);
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* ===== Hands-on labs ===== */
+    .lab {
+      margin-top: 1.5rem;
+    }
+
+    .lab h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .lab ul {
+      margin-top: 0.35rem;
+      padding-left: 1.1rem;
+      list-style: disc;
+    }
+
+    .lab ul li {
+      margin-bottom: 0.35rem;
+      color: var(--text-muted);
+    }
+
+    .lab img {
+      display: block;
+      max-width: 100%;
+      border-radius: 0.75rem;
+      margin-top: 0.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+    }
+
+    /* ===== Buttons ===== */
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      background: var(--bg-gradient);
+      color: #ffffff;
+      cursor: pointer;
+      transition: transform 0.1s, box-shadow 0.1s, opacity 0.1s;
+      text-decoration: none;
+    }
+
+    .btn.secondary {
+      background: #ffffff;
+      color: var(--accent);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .btn:hover {
+      opacity: 0.93;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    /* ===== Contact ===== */
+    .contact-list {
+      margin-top: 0.5rem;
+    }
+
+    .contact-list li {
+      margin-bottom: 0.35rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      padding: 1.5rem 1rem 2.5rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="main">
-        <nav>
-            <ul>
-                <li><a href="#" onclick="showSection('profile')">Home</a></li>
-                <li><a href="#" onclick="showSection('about')">About</a></li>
-                <li><a href="#" onclick="showSection('skills')">Skills</a></li>
-                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
-            </ul>
-        </nav>
-
-        <div id="profile" class="content-section active">
-            <div class="card">
-                <div class="profile-section">
-                    <img src="Fatoumata 2.jpg" alt="Fatoumata Bocoum" class="profile-pic">
-                    <h1 class="profile-name">Fatoumata Y Bocoum</h1>
-                    <p class="profile-title">Networking Systems & Technologies Student</p>
-                    <p style="color: #666; font-size: 1.2rem; text-align: center;">
-                        Olive-Harvey College • Graduating May 2026
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div id="about" class="content-section">
-            <div class="card">
-                <h2>💁‍♀️ About Me</h2>
-                <p style="font-size: 1.2rem; text-align: center; margin-bottom: 2rem; color: #555;">
-                    Networking student passionate about building reliable network infrastructure.
-                </p>
-                <p>I'm a Networking Systems & Technologies student at <strong>Olive-Harvey College</strong> (City Colleges of Chicago), graduating in May 2026. I first earned a Financial Accounting Technician diploma from Institut Universitaire de Gestion (IUG) in Bamako, Mali, and completed internships at Direction Administrative des Finances and Income Tax Perception.</p>
-                <p>After moving to the United States and working while studying on and off, I decided to return to school to pursue my passion for <strong>computer networking</strong>. I currently work part-time as a Testing Specialist at Olive-Harvey College and as a package handler at UPS.</p>
-                <p style="font-style: italic; color: #667eea; text-align: center; margin-top: 1.5rem;">
-                    I speak <strong>English, French, Bambara, and Poular</strong>.
-                </p>
-            </div>
-        </div>
-
-        <div id="skills" class="content-section">
-            <div class="card">
-                <h2>🛠️ Skills & Knowledge</h2>
-                
-                <h3 style="color: #333; margin: 2rem 0 1rem 0; font-size: 1.5rem;">Core Networking Fundamentals</h3>
-                <div class="skills-grid">
-                    <span class="skill">TCP/IP protocol suite</span>
-                    <span class="skill">OSI model</span>
-                    <span class="skill">Subnetting IPv4/IPv6</span>
-                    <span class="skill">DNS, DHCP, NAT</span>
-                    <span class="skill">VLANs, trunking</span>
-                    <span class="skill">Network troubleshooting</span>
-                </div>
-                
-                <h3 style="color: #333; margin: 2rem 0 1rem 0; font-size: 1.5rem;">Hands-On Networking Labs</h3>
-                <div class="skills-grid">
-                    <span class="skill">Cisco Packet Tracer</span>
-                    <span class="skill">Router/switch config</span>
-                    <span class="skill">Windows Server 2019</span>
-                    <span class="skill">Active Directory</span>
-                    <span class="skill">Linux + Apache</span>
-                </div>
-                
-                <h3 style="color: #333; margin: 2rem 0 1rem 0; font-size: 1.5rem;">Current Courses</h3>
-                <div class="skills-grid">
-                    <span class="skill">CIS 260: Web Development</span>
-                    <span class="skill">CIS 103: Python</span>
-                    <span class="skill">NETTEC 221: Advanced Networking</span>
-                </div>
-                
-                <h3 style="color: #333; margin: 2rem 0 1rem 0; font-size: 1.5rem;">Certifications</h3>
-                <ul>
-                    <li><span class="cert-check">✅ Networking Systems & Technologies Certificate</span> - Olive-Harvey College</li>
-                    <li>🔄 Planned: CompTIA Network+</li>
-                    <li>🔄 Planned: Basic Cybersecurity Certificate</li>
-                    <li>🔄 Planned: Advanced Cloud Computing Certificate</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="contact" class="content-section">
-            <div class="card">
-                <h2>📬 Let's Connect</h2>
-                <p style="font-size: 1.2rem; text-align: center; margin-bottom: 2rem; color: #555;">
-                    Ready to discuss networking projects or opportunities.
-                </p>
-                <div class="contact-links">
-                    <a href="mailto:fbocoum1@student.ccc.edu">✉️ Email Me</a>
-                    <a href="https://github.com/Fbocoum1" target="_blank">🐙 GitHub</a>
-                </div>
-            </div>
-        </div>
+  <!-- ===== Navigation ===== -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-brand">Fatoumata Y Bocoum</div>
+      <div class="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#labs">Hands-On Labs</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
+  </nav>
 
-    <script>
-        function showSection(sectionId) {
-            document.querySelectorAll('.content-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            document.querySelectorAll('nav a').forEach(link => {
-                link.classList.remove('active');
-            });
-            
-            document.getElementById(sectionId).classList.add('active');
-            event.target.classList.add('active');
-        }
-    </script>
+  <!-- ===== Main content ===== -->
+  <main class="main">
+    <!-- Home / About -->
+    <section id="home" class="card">
+      <div class="home-header">
+        <div class="profile-photo">
+          <!-- Update image path -->
+          <img src="images/profile.jpg" alt="Profile photo of Fatoumata Y Bocoum" />
+        </div>
+        <h1 class="home-title">Fatoumata Y Bocoum</h1>
+        <p class="home-subtitle">Networking Systems &amp; Technologies Student</p>
+        <p class="home-meta">
+          Olive-Harvey College • Chicago, IL • Graduating May 2026
+        </p>
+      </div>
+
+      <!-- Biography -->
+      <p class="bio">
+        I am a Networking Systems &amp; Technologies student at Olive-Harvey College in
+        Chicago, graduating in May 2026. I enjoy building hands-on labs, including
+        Windows Active Directory domains, IPv4 subnetting, and VLAN configuration, to
+        strengthen my troubleshooting skills and prepare for industry certifications.
+        Before networking, I earned a Financial Accounting Technician diploma from the
+        Institute Universitaire de Gestion in Bamako, Mali, and completed internships
+        in finance and tax administration. After moving to the United States, I worked
+        in my family business, then as a package handler at UPS, which taught me
+        resilience and adaptability. Today I work part-time as a Testing Specialist at
+        Olive-Harvey College while running a small export business, and I am seeking
+        opportunities to apply my technical skills in real-world networking and IT
+        environments.
+      </p>
+
+      <div class="btn-row">
+        <!-- Update links if paths differ -->
+        <a
+          href="Fatoumata_Y_Bocoum-Resume.pdf"
+          class="btn"
+          target="_blank"
+          rel="noopener"
+          >View Resume (PDF)</a
+        >
+        <a href="My-Biography.pdf" class="btn secondary" target="_blank" rel="noopener"
+          >Download Biography</a
+        >
+        <a
+          href="https://github.com/fbocoum1/Networking-portfolio"
+          class="btn secondary"
+          target="_blank"
+          rel="noopener"
+          >View GitHub Repo</a
+        >
+      </div>
+    </section>
+
+    <!-- Skills & knowledge -->
+    <section id="skills" class="card">
+      <h2>Skills &amp; Knowledge</h2>
+      <p>
+        Focused on core networking fundamentals, troubleshooting, and building labs
+        that mirror real-world small business environments.
+      </p>
+
+      <h3>Networking &amp; Infrastructure</h3>
+      <div class="tag-list">
+        <span class="tag">TCP/IP</span>
+        <span class="tag">IPv4 subnetting</span>
+        <span class="tag">VLANs &amp; trunking</span>
+        <span class="tag">Routing basics</span>
+        <span class="tag">Active Directory (labs)</span>
+        <span class="tag">DNS &amp; DHCP</span>
+      </div>
+
+      <h3 style="margin-top: 1.5rem;">Tools &amp; Platforms</h3>
+      <div class="tag-list">
+        <span class="tag">Cisco Packet Tracer</span>
+        <span class="tag">Wireshark</span>
+        <span class="tag">VMware / VirtualBox</span>
+        <span class="tag">AWS (intro)</span>
+        <span class="tag">Windows Server</span>
+        <span class="tag">Linux basics</span>
+      </div>
+
+      <h3 style="margin-top: 1.5rem;">Programming &amp; Scripting</h3>
+      <div class="tag-list">
+        <span class="tag">HTML / CSS</span>
+        <span class="tag">Python (intro)</span>
+        <span class="tag">Bash</span>
+        <span class="tag">PowerShell</span>
+      </div>
+
+      <h3 style="margin-top: 1.5rem;">Professional Strengths</h3>
+      <div class="tag-list">
+        <span class="tag">Communication</span>
+        <span class="tag">Customer service</span>
+        <span class="tag">Time management</span>
+        <span class="tag">Teamwork</span>
+        <span class="tag">Attention to detail</span>
+      </div>
+    </section>
+
+    <!-- Hands-on labs -->
+    <section id="labs" class="card">
+      <h2>Hands-On Labs</h2>
+      <p>
+        Selected labs that demonstrate how I apply networking concepts using real
+        tools and step-by-step configurations.
+      </p>
+
+      <div class="lab">
+        <h3>Active Directory Home Lab</h3>
+        <p>
+          Built a small Windows domain with one Domain Controller and multiple client
+          PCs to practice user management and basic group policy.
+        </p>
+        <ul>
+          <li>Installed Windows Server and promoted it to a Domain Controller.</li>
+          <li>Configured DNS and DHCP and joined client machines to the domain.</li>
+          <li>
+            Created OU structure, user accounts, and groups for different departments.
+          </li>
+        </ul>
+        <!-- Replace screenshot path if you add one -->
+        <!-- <img src="images/ad-lab-1.png" alt="Active Directory Users and Computers screenshot" /> -->
+      </div>
+
+      <div class="lab">
+        <h3>IPv4 Subnetting Lab</h3>
+        <p>
+          Designed and documented subnet schemes for a small business network and
+          verified connectivity between hosts.
+        </p>
+        <ul>
+          <li>Divided a /24 network into multiple /28 and /30 subnets.</li>
+          <li>Assigned IP addresses, masks, and gateways to each subnet.</li>
+          <li>
+            Tested connectivity using pings and verified addressing in Packet Tracer.
+          </li>
+        </ul>
+        <!-- <img src="images/subnet-lab-1.png" alt="IPv4 subnetting worksheet" /> -->
+      </div>
+
+      <div class="lab">
+        <h3>VLANs &amp; Trunking in Packet Tracer</h3>
+        <p>
+          Segmented a simulated network into multiple VLANs and configured trunk ports
+          to control broadcast domains.
+        </p>
+        <ul>
+          <li>Created separate VLANs for users, servers, and management.</li>
+          <li>
+            Configured trunk links between switches and set the correct native VLAN.
+          </li>
+          <li>Verified inter-VLAN communication using a router-on-a-stick design.</li>
+        </ul>
+        <!-- <img src="images/vlan-lab-1.png" alt="Packet Tracer VLAN topology" /> -->
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>
+        I am actively seeking internships and entry-level roles in IT support and
+        networking. The best way to reach me is by email.
+      </p>
+
+      <ul class="contact-list">
+        <li><strong>Email:</strong> fbocoum1@student.ccc.edu</li>
+        <li><strong>Location:</strong> Chicago, Illinois, USA</li>
+        <li><strong>GitHub:</strong> <a href="https://fbocoum1.github.io/Networking-portfolio/" target="_blank" rel="noopener">fbocoum1.github.io/Networking-portfolio</a></li>
+        <!-- Replace with your real LinkedIn profile URL -->
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/Fatoumata Y Bocoum" target="_blank" rel="noopener">LinkedIn Profile</a></li>
+      </ul>
+
+      <div class="btn-row">
+        <a href="mailto:fbocoum1@student.ccc.edu" class="btn">Email Me</a>
+        <a
+          href="https://fbocoum1.github.io/Networking-portfolio/"
+          class="btn secondary"
+          target="_blank"
+          rel="noopener"
+          >View Live Portfolio</a
+        >
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Fatoumata Y Bocoum • Networking Portfolio
+  </footer>
+
+  <!-- ===== Simple nav highlighting ===== -->
+  <script>
+    // Highlight current nav item on click (simple client-side only)
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        document
+          .querySelectorAll(".nav-links a")
+          .forEach((l) => l.classList.remove("active"));
+        link.classList.add("active");
+      });
+    });
+  </script>
 </body>
 </html>
-
