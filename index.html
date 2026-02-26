@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    /* ===== Global styles ===== */
     :root {
       --bg-gradient: linear-gradient(135deg, #5b6bff, #a14bff);
       --card-bg: #ffffff;
@@ -90,7 +89,6 @@
       color: #ffffff;
     }
 
-    /* Mobile: stack nav links if needed */
     @media (max-width: 640px) {
       .nav-inner {
         flex-direction: column;
@@ -108,7 +106,7 @@
     .main {
       max-width: 960px;
       width: 100%;
-      padding: 7rem 1rem 3rem; /* top padding so cards are not hidden by nav */
+      padding: 7rem 1rem 3rem;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -117,7 +115,7 @@
 
     @media (max-width: 600px) {
       .main {
-        padding-top: 8.5rem; /* extra space on phones */
+        padding-top: 8.5rem;
       }
     }
 
@@ -172,43 +170,42 @@
     }
 
     .home-title {
-      font-size: 1.6rem;
+      font-size: 1.45rem;
       font-weight: 700;
     }
 
     .home-subtitle {
       color: var(--accent);
       font-weight: 600;
+      font-size: 1.05rem;
     }
 
     .home-meta {
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
     }
 
     .bio {
       margin-top: 0.5rem;
-      font-size: 0.98rem;
+      font-size: 0.95rem;
       line-height: 1.7;
       text-align: left;
     }
 
     /* ===== Skills / badges ===== */
     .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
       margin-top: 0.5rem;
     }
 
-    .tag {
-      padding: 0.4rem 0.9rem;
-      border-radius: 999px;
-      background: var(--bg-gradient);
-      color: #ffffff;
-      font-size: 0.85rem;
-      font-weight: 500;
-      white-space: nowrap;
+    .tag-list li {
+      margin-bottom: 0.4rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .tag-title {
+      font-weight: 600;
+      color: var(--accent);
     }
 
     /* ===== Hands-on labs ===== */
@@ -252,10 +249,10 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.7rem 1.4rem;
+      padding: 0.6rem 1.3rem;
       border-radius: 999px;
       border: none;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 600;
       background: var(--bg-gradient);
       color: #ffffff;
@@ -315,17 +312,20 @@
     <section id="home" class="card">
       <div class="home-header">
         <div class="profile-photo">
-          <!-- Update image path -->
-          <img src="images/Fatoumata 2.jpg" alt="Profile photo of Fatoumata Y Bocoum" />
+          <!-- update image path if needed -->
+          <img src="Fatoumata 2.jpg" alt="Profile photo of Fatoumata Y Bocoum" />
         </div>
-        <h1 class="home-title">Fatoumata Y Bocoum</h1>
-        <p class="home-subtitle">Networking Systems &amp; Technologies Student</p>
+        <h1 class="home-title">Welcome to my website</h1>
+        <p class="home-subtitle">Fatoumata Y Bocoum</p>
         <p class="home-meta">
-          Olive-Harvey College • Chicago, IL • Graduating May 2026
+          Networking Systems &amp; Technologies Student • Olive-Harvey College • Chicago, IL • Graduating May 2026
+        </p>
+        <p class="home-meta">
+          Phone: <a href="tel:17737076813">773-707-6813</a> •
+          Email: <a href="mailto:fbocoum1@student.ccc.edu">fbocoum1@student.ccc.edu</a>
         </p>
       </div>
 
-      <!-- Biography -->
       <p class="bio">
         I am a Networking Systems &amp; Technologies student at Olive-Harvey College in
         Chicago, graduating in May 2026. I enjoy building hands-on labs, including
@@ -342,79 +342,124 @@
       </p>
 
       <div class="btn-row">
-        <!-- Update links if paths differ -->
         <a
           href="Fatoumata_Y_Bocoum-Resume.pdf"
           class="btn"
           target="_blank"
           rel="noopener"
-          >View Resume (PDF)</a
         >
-        <a href="My-Biography.pdf" class="btn secondary" target="_blank" rel="noopener"
-          >Download Biography</a
-        >
+          View Resume
+        </a>
+        <a href="My-Biography.pdf" class="btn secondary" target="_blank" rel="noopener">
+          Biography (PDF)
+        </a>
         <a
           href="https://github.com/fbocoum1/Networking-portfolio"
           class="btn secondary"
           target="_blank"
           rel="noopener"
-          >View GitHub Repo</a
         >
+          GitHub Repo
+        </a>
       </div>
     </section>
 
     <!-- Skills & knowledge -->
     <section id="skills" class="card">
-      <h2>Skills &amp; Knowledge</h2>
+      <h2>Skills I Can Explain</h2>
       <p>
-        Focused on core networking fundamentals, troubleshooting, and building labs
-        that mirror real-world small business environments.
+        These are skills I have actually practiced in labs, projects, or jobs and can
+        walk through step-by-step.
       </p>
 
-      <h3>Networking &amp; Infrastructure</h3>
-      <div class="tag-list">
-        <span class="tag">TCP/IP</span>
-        <span class="tag">IPv4 subnetting</span>
-        <span class="tag">VLANs &amp; trunking</span>
-        <span class="tag">Routing basics</span>
-        <span class="tag">Active Directory (labs)</span>
-        <span class="tag">DNS &amp; DHCP</span>
-      </div>
+      <h3>Networking & Troubleshooting</h3>
+      <ul class="tag-list">
+        <li>
+          <span class="tag-title">Designing simple IP addressing plans:</span>
+          create IPv4 subnets for small networks, assign host addresses, and choose
+          gateways so devices can communicate.
+        </li>
+        <li>
+          <span class="tag-title">Configuring VLANs and trunk ports in Packet Tracer:</span>
+          separate traffic for different groups (for example students vs. staff) and
+          verify connectivity.
+        </li>
+        <li>
+          <span class="tag-title">Basic router and switch configuration:</span>
+          set hostnames, passwords, interfaces, and save running configurations in
+          Packet Tracer labs.
+        </li>
+        <li>
+          <span class="tag-title">Using pings and tracert for troubleshooting:</span>
+          test connectivity, identify where traffic stops, and decide if the problem
+          is addressing, cabling, or configuration.
+        </li>
+      </ul>
 
-      <h3 style="margin-top: 1.5rem;">Tools &amp; Platforms</h3>
-      <div class="tag-list">
-        <span class="tag">Cisco Packet Tracer</span>
-        <span class="tag">Wireshark</span>
-        <span class="tag">VMware / VirtualBox</span>
-        <span class="tag">AWS (intro)</span>
-        <span class="tag">Windows Server</span>
-        <span class="tag">Linux basics</span>
-      </div>
+      <h3 style="margin-top: 1.5rem;">Windows & Active Directory</h3>
+      <ul class="tag-list">
+        <li>
+          <span class="tag-title">Installing Windows Server in a virtual machine:</span>
+          create a VM, configure network settings, and prepare it to become a domain
+          controller.
+        </li>
+        <li>
+          <span class="tag-title">Creating a basic Active Directory domain:</span>
+          promote a server to domain controller, create OUs, users, and groups, and
+          join Windows clients to the domain.
+        </li>
+        <li>
+          <span class="tag-title">Managing user accounts and simple policies:</span>
+          reset passwords, disable accounts, and apply basic group policies such as
+          password or desktop restrictions.
+        </li>
+      </ul>
 
-      <h3 style="margin-top: 1.5rem;">Programming &amp; Scripting</h3>
-      <div class="tag-list">
-        <span class="tag">HTML / CSS</span>
-        <span class="tag">Python (intro)</span>
-        <span class="tag">Bash</span>
-        <span class="tag">PowerShell</span>
-      </div>
+      <h3 style="margin-top: 1.5rem;">Tools, Scripting & Web</h3>
+      <ul class="tag-list">
+        <li>
+          <span class="tag-title">Using Wireshark and Packet Tracer:</span>
+          capture traffic, follow pings, and visualize how packets move through a
+          small network.
+        </li>
+        <li>
+          <span class="tag-title">Writing simple scripts:</span>
+          use Bash or PowerShell to automate basic tasks such as listing network
+          settings or creating folders.
+        </li>
+        <li>
+          <span class="tag-title">Building HTML/CSS pages:</span>
+          create responsive sections, navigation, and buttons like the ones on this
+          portfolio site.
+        </li>
+      </ul>
 
-      <h3 style="margin-top: 1.5rem;">Professional Strengths</h3>
-      <div class="tag-list">
-        <span class="tag">Communication</span>
-        <span class="tag">Customer service</span>
-        <span class="tag">Time management</span>
-        <span class="tag">Teamwork</span>
-        <span class="tag">Attention to detail</span>
-      </div>
+      <h3 style="margin-top: 1.5rem;">Professional & Soft Skills</h3>
+      <ul class="tag-list">
+        <li>
+          <span class="tag-title">Customer service under pressure:</span>
+          support students and test-takers as a Testing Specialist while keeping a
+          calm and professional attitude.
+        </li>
+        <li>
+          <span class="tag-title">Time management and reliability:</span>
+          balance part-time work, classes, labs, and a small export business while
+          maintaining strong grades.
+        </li>
+        <li>
+          <span class="tag-title">Teamwork and communication:</span>
+          collaborate with classmates in labs and coordinate with coworkers in the
+          testing center and family business.
+        </li>
+      </ul>
     </section>
 
     <!-- Hands-on labs -->
     <section id="labs" class="card">
       <h2>Hands-On Labs</h2>
       <p>
-        Selected labs that demonstrate how I apply networking concepts using real
-        tools and step-by-step configurations.
+        These labs show how I apply networking concepts using real tools and
+        configurations.
       </p>
 
       <div class="lab">
@@ -426,12 +471,8 @@
         <ul>
           <li>Installed Windows Server and promoted it to a Domain Controller.</li>
           <li>Configured DNS and DHCP and joined client machines to the domain.</li>
-          <li>
-            Created OU structure, user accounts, and groups for different departments.
-          </li>
+          <li>Created OU structure, user accounts, and groups for departments.</li>
         </ul>
-        <!-- Replace screenshot path if you add one -->
-        <!-- <img src="images/ad-lab-1.png" alt="Active Directory Users and Computers screenshot" /> -->
       </div>
 
       <div class="lab">
@@ -441,13 +482,10 @@
           verified connectivity between hosts.
         </p>
         <ul>
-          <li>Divided a /24 network into multiple /28 and /30 subnets.</li>
+          <li>Divided a /24 network into multiple smaller subnets.</li>
           <li>Assigned IP addresses, masks, and gateways to each subnet.</li>
-          <li>
-            Tested connectivity using pings and verified addressing in Packet Tracer.
-          </li>
+          <li>Tested connectivity using pings in Packet Tracer.</li>
         </ul>
-        <!-- <img src="images/subnet-lab-1.png" alt="IPv4 subnetting worksheet" /> -->
       </div>
 
       <div class="lab">
@@ -458,12 +496,9 @@
         </p>
         <ul>
           <li>Created separate VLANs for users, servers, and management.</li>
-          <li>
-            Configured trunk links between switches and set the correct native VLAN.
-          </li>
-          <li>Verified inter-VLAN communication using a router-on-a-stick design.</li>
+          <li>Configured trunk links between switches with the correct native VLAN.</li>
+          <li>Verified inter-VLAN communication using router-on-a-stick.</li>
         </ul>
-        <!-- <img src="images/vlan-lab-1.png" alt="Packet Tracer VLAN topology" /> -->
       </div>
     </section>
 
@@ -472,26 +507,38 @@
       <h2>Contact</h2>
       <p>
         I am actively seeking internships and entry-level roles in IT support and
-        networking. The best way to reach me is by email.
+        networking.
       </p>
 
       <ul class="contact-list">
         <li><strong>Email:</strong> fbocoum1@student.ccc.edu</li>
+        <li><strong>Phone:</strong> 773-707-6813</li>
         <li><strong>Location:</strong> Chicago, Illinois, USA</li>
-        <li><strong>GitHub:</strong> <a href="https://fbocoum1.github.io/Networking-portfolio/" target="_blank" rel="noopener">fbocoum1.github.io/Networking-portfolio</a></li>
-        <!-- Replace with your real LinkedIn profile URL -->
-        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/Fatoumata Y Bocoum" target="_blank" rel="noopener">LinkedIn Profile</a></li>
+        <li>
+          <strong>GitHub:</strong>
+          <a href="https://fbocoum1.github.io/Networking-portfolio/" target="_blank" rel="noopener">
+            fbocoum1.github.io/Networking-portfolio
+          </a>
+        </li>
+        <!-- Replace with your real LinkedIn profile URL when ready -->
+        <li>
+          <strong>LinkedIn:</strong>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener">
+            LinkedIn Profile
+          </a>
+        </li>
       </ul>
 
       <div class="btn-row">
         <a href="mailto:fbocoum1@student.ccc.edu" class="btn">Email Me</a>
         <a
-          href="https://fbocoum1.github.io/Networking-portfolio/"
+          href="Fatoumata_Y_Bocoum-Resume.pdf"
           class="btn secondary"
           target="_blank"
           rel="noopener"
-          >View Live Portfolio</a
         >
+          Download Resume
+        </a>
       </div>
     </section>
   </main>
@@ -500,9 +547,8 @@
     &copy; 2026 Fatoumata Y Bocoum • Networking Portfolio
   </footer>
 
-  <!-- ===== Simple nav highlighting ===== -->
   <script>
-    // Highlight current nav item on click (simple client-side only)
+    // simple nav active highlight
     document.querySelectorAll(".nav-links a").forEach((link) => {
       link.addEventListener("click", () => {
         document
@@ -514,4 +560,3 @@
   </script>
 </body>
 </html>
-
