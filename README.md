@@ -19,7 +19,7 @@ The site is organized into several sections that display one at a time (Home, Sk
   - Phone number and email for direct contact.
 
 - **Resume**  
-  - A navigation item at the top that opens my current resume PDF (`Fatoumata_Y_Bocoum-Resume.pdf`) in a new tab.
+  - A navigation item at the top that opens my current resume PDF (`Fatoumata_Y_Bocoum Resume.pdf`) in a new tab.
 
 - **Skills I’m Learning and Practicing**  
   - Networking and troubleshooting skills I have practiced in labs (IP addressing and subnetting, VLANs and trunking, basic router and switch configuration, using ping and tracert to troubleshoot).  
@@ -28,7 +28,7 @@ The site is organized into several sections that display one at a time (Home, Sk
   - Professional and soft skills (customer service, communication, time management, teamwork, attention to detail).
 
 - **Hands-On Labs**  
-  - Short writeups of key labs that I can explain step by step, including:
+  - Short writeups of key labs that I have learned, include:
     - Active Directory home lab (domain controller, DNS/DHCP, OUs, users and groups).  
     - IPv4 subnetting lab (designing subnets, assigning addresses and gateways, verifying connectivity).  
     - VLANs and trunking in Packet Tracer (separating traffic and using router-on-a-stick).
@@ -40,8 +40,8 @@ The site is organized into several sections that display one at a time (Home, Sk
 ## Files
 
 - `index.html` – Main single-page portfolio (includes HTML, CSS, and JavaScript).  
-- `Fatoumata_Y_Bocoum-Resume.pdf` – Current resume, opened from the top navigation.  
-- `My-Biography.pdf` – One-page biography with more background information.  
+- `Fatoumata_Y_Bocoum Resume.pdf` – Current resume, opened from the top navigation.  
+- `My Biography.pdf` – One-page biography with more background information.  
 - `Fatoumata 2.jpg` – Profile photo used on the Home section.  
 - *(Optional)* Additional images or screenshots if added later for labs.
 
