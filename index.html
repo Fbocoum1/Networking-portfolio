@@ -60,7 +60,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.75rem 1rem;
+      padding: 0.4rem 1rem;
     }
 
     .nav-brand {
@@ -71,14 +71,15 @@
 
     .nav-links {
       display: flex;
-      gap: 1rem;
+      gap: 0.75rem;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
-      padding: 0.35rem 0.75rem;
+      padding: 0.3rem 0.7rem;
       border-radius: 999px;
       transition: background 0.2s, color 0.2s;
     }
@@ -93,12 +94,7 @@
       .nav-inner {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.5rem;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-        gap: 0.5rem;
+        gap: 0.4rem;
       }
     }
 
@@ -106,7 +102,7 @@
     .main {
       max-width: 960px;
       width: 100%;
-      padding: 7rem 1rem 3rem;
+      padding: 6.3rem 1rem 3rem;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -115,7 +111,7 @@
 
     @media (max-width: 600px) {
       .main {
-        padding-top: 8.5rem;
+        padding-top: 7.5rem;
       }
     }
 
@@ -145,7 +141,21 @@
       line-height: 1.6;
     }
 
+    /* ===== Page visibility (slide-by-slide) ===== */
+    .page {
+      display: none;
+    }
+
+    .page.active-page {
+      display: block;
+    }
+
     /* ===== Home card ===== */
+    .home-header {
+      display: flex;
+      flex-direction: vertical;
+    }
+
     .home-header {
       display: flex;
       flex-direction: column;
@@ -170,7 +180,7 @@
     }
 
     .home-title {
-      font-size: 1.45rem;
+      font-size: 1.3rem;
       font-weight: 700;
     }
 
@@ -192,7 +202,7 @@
       text-align: left;
     }
 
-    /* ===== Skills / badges ===== */
+    /* ===== Skills lists ===== */
     .tag-list {
       margin-top: 0.5rem;
     }
@@ -227,14 +237,6 @@
     .lab ul li {
       margin-bottom: 0.35rem;
       color: var(--text-muted);
-    }
-
-    .lab img {
-      display: block;
-      max-width: 100%;
-      border-radius: 0.75rem;
-      margin-top: 0.5rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
     }
 
     /* ===== Buttons ===== */
@@ -290,15 +292,6 @@
       color: rgba(255, 255, 255, 0.9);
       font-size: 0.85rem;
     }
-    
-  .page {
-  display: none;
-    }
-
-.page.active-page {
-  display: block;
-    }
-
   </style>
 </head>
 <body>
@@ -308,9 +301,10 @@
       <div class="nav-brand">Fatoumata Y Bocoum</div>
       <div class="nav-links">
         <a href="#home" class="active">Home</a>
-        <a href="Fatoumata_Y_Bocoum Resume.pdf" target="_blank" rel="noopener">
-    Resume</a>
-        <a href="#skills">Skills</a>
+        <a href="Fatoumata_Y_Bocoum-Resume.pdf" target="_blank" rel="noopener">
+          Resume
+        </a>
+        <a href="#skills">Skills I’m Learning and Practicing</a>
         <a href="#labs">Hands-On Labs</a>
         <a href="#contact">Contact</a>
       </div>
@@ -323,7 +317,7 @@
     <section id="home" class="card page">
       <div class="home-header">
         <div class="profile-photo">
-          <!-- update image path if needed -->
+          <!-- profile photo in same folder as index.html -->
           <img src="Fatoumata 2.jpg" alt="Profile photo of Fatoumata Y Bocoum" />
         </div>
         <h1 class="home-title">Welcome to my website</h1>
@@ -338,24 +332,24 @@
       </div>
 
       <p class="bio">
-        I am a Networking Systems &amp; Technologies student at Olive-Harvey College in
-        Chicago, graduating in May 2026, where I have already earned a basic certificate
-        in Networking Systems and Technologies. I enjoy building hands-on labs, including
-        Windows Active Directory domains, IPv4 subnetting, and VLAN configuration, to
-        strengthen my troubleshooting skills and deepen my networking knowledge.
-        Before networking, I earned a Financial Accounting Technician diploma from the
-        Institute Universitaire de Gestion in Bamako, Mali, and completed internships
-        in finance and tax administration. After moving to the United States, I worked
-        in my family business, then as a package handler at UPS, which taught me
-        resilience and adaptability. Today I work part-time as a Testing Specialist at
-        Olive-Harvey College while running a small export business, and I am seeking
-        opportunities to apply my technical skills in real-world networking and IT
-        environments.
+        I am a Networking Systems &amp; Technologies student at Olive-Harvey College in Chicago, graduating in May 2026,
+        where I have already earned a basic certificate in Networking Systems &amp; Technologies. I enjoy building
+        hands-on labs, including Windows Active Directory domains, IPv4 subnetting, and VLAN configuration, to
+        strengthen my troubleshooting skills and deepen my networking knowledge. Before networking, I earned a Financial
+        Accounting Technician diploma from the Institute Universitaire de Gestion in Bamako, Mali, and completed
+        internships in finance and tax administration. After moving to the United States, I worked in my family
+        business, then as a package handler at UPS, which taught me resilience and adaptability. Today I work part-time
+        as a Testing Specialist at Olive-Harvey College while running a small export business, and I am seeking
+        opportunities to apply my technical skills in real-world networking and IT environments.
       </p>
 
       <div class="btn-row">
-        
-        <a href="My Biography.pdf" class="btn secondary" target="_blank" rel="noopener">
+        <a
+          href="My-Biography.pdf"
+          class="btn secondary"
+          target="_blank"
+          rel="noopener"
+        >
           Biography (PDF)
         </a>
         <a
@@ -371,90 +365,76 @@
 
     <!-- Skills & knowledge -->
     <section id="skills" class="card page">
-      <h2>Skills I am learning and practicing</h2>
+      <h2>Skills I’m Learning and Practicing</h2>
       <p>
-        These are skills I have actually practiced in labs, projects, or jobs and can
-        walk through step-by-step.
+        These are skills I have practiced in labs, projects, or jobs and can explain step by step.
       </p>
 
-      <h3>Networking & Troubleshooting</h3>
+      <h3>Networking &amp; Troubleshooting</h3>
       <ul class="tag-list">
         <li>
           <span class="tag-title">Designing simple IP addressing plans:</span>
-          create IPv4 subnets for small networks, assign host addresses, and choose
-          gateways so devices can communicate.
+          create IPv4 subnets for small networks, assign host addresses, and choose gateways so devices can communicate.
         </li>
         <li>
           <span class="tag-title">Configuring VLANs and trunk ports in Packet Tracer:</span>
-          separate traffic for different groups (for example students vs. staff) and
-          verify connectivity.
+          separate traffic for different groups (for example students vs. staff) and verify connectivity.
         </li>
         <li>
           <span class="tag-title">Basic router and switch configuration:</span>
-          set hostnames, passwords, interfaces, and save running configurations in
-          Packet Tracer labs.
+          set hostnames, passwords, interfaces, and save running configurations in Packet Tracer labs.
         </li>
         <li>
-          <span class="tag-title">Using pings and tracert for troubleshooting:</span>
-          test connectivity, identify where traffic stops, and decide if the problem
-          is addressing, cabling, or configuration.
+          <span class="tag-title">Using ping and tracert for troubleshooting:</span>
+          test connectivity, identify where traffic stops, and decide if the problem is addressing, cabling, or configuration.
         </li>
       </ul>
 
-      <h3 style="margin-top: 1.5rem;">Windows & Active Directory</h3>
+      <h3 style="margin-top: 1.5rem;">Windows &amp; Active Directory</h3>
       <ul class="tag-list">
         <li>
           <span class="tag-title">Installing Windows Server in a virtual machine:</span>
-          create a VM, configure network settings, and prepare it to become a domain
-          controller.
+          create a VM, configure network settings, and prepare it to become a domain controller.
         </li>
         <li>
           <span class="tag-title">Creating a basic Active Directory domain:</span>
-          promote a server to domain controller, create OUs, users, and groups, and
-          join Windows clients to the domain.
+          promote a server to domain controller, create OUs, users, and groups, and join Windows clients to the domain.
         </li>
         <li>
           <span class="tag-title">Managing user accounts and simple policies:</span>
-          reset passwords, disable accounts, and apply basic group policies such as
-          password or desktop restrictions.
+          reset passwords, disable accounts, and apply basic group policies such as password or desktop restrictions.
         </li>
       </ul>
 
-      <h3 style="margin-top: 1.5rem;">Tools, Scripting & Web</h3>
+      <h3 style="margin-top: 1.5rem;">Tools, Scripting &amp; Web</h3>
       <ul class="tag-list">
         <li>
           <span class="tag-title">Using Wireshark and Packet Tracer:</span>
-          capture traffic, follow pings, and visualize how packets move through a
-          small network.
+          capture traffic, follow pings, and visualize how packets move through a small network.
         </li>
         <li>
           <span class="tag-title">Writing simple scripts:</span>
-          use Bash or PowerShell to automate basic tasks such as listing network
-          settings or creating folders.
+          use Bash or PowerShell to automate basic tasks such as listing network settings or creating folders.
         </li>
         <li>
           <span class="tag-title">Building HTML/CSS pages:</span>
-          create responsive sections, navigation, and buttons like the ones on this
-          portfolio site.
+          create responsive sections, navigation, and buttons like the ones on this portfolio site.
         </li>
       </ul>
 
-      <h3 style="margin-top: 1.5rem;">Professional & Soft Skills</h3>
+      <h3 style="margin-top: 1.5rem;">Professional &amp; Soft Skills</h3>
       <ul class="tag-list">
         <li>
           <span class="tag-title">Customer service under pressure:</span>
-          support students and test-takers as a Testing Specialist while keeping a
-          calm and professional attitude.
+          support students and test-takers as a Testing Specialist while keeping a calm and professional attitude.
         </li>
         <li>
           <span class="tag-title">Time management and reliability:</span>
-          balance part-time work, classes, labs, and a small export business while
-          maintaining strong grades.
+          balance part-time work, classes, labs, and a small export business while maintaining strong grades.
         </li>
         <li>
           <span class="tag-title">Teamwork and communication:</span>
-          collaborate with classmates in labs and coordinate with coworkers in the
-          testing center and family business.
+          collaborate with classmates in labs and coordinate with coworkers in the testing center and family business.
         </li>
       </ul>
     </section>
@@ -463,15 +443,13 @@
     <section id="labs" class="card page">
       <h2>Hands-On Labs</h2>
       <p>
-        These labs show how I apply networking concepts using real tools and
-        configurations.
+        These labs show how I apply networking concepts using real tools and configurations.
       </p>
 
       <div class="lab">
         <h3>Active Directory Home Lab</h3>
         <p>
-          Built a small Windows domain with one Domain Controller and multiple client
-          PCs to practice user management and basic group policy.
+          Built a small Windows domain with one Domain Controller and multiple client PCs to practice user management and basic group policy.
         </p>
         <ul>
           <li>Installed Windows Server and promoted it to a Domain Controller.</li>
@@ -483,8 +461,7 @@
       <div class="lab">
         <h3>IPv4 Subnetting Lab</h3>
         <p>
-          Designed and documented subnet schemes for a small business network and
-          verified connectivity between hosts.
+          Designed and documented subnet schemes for a small business network and verified connectivity between hosts.
         </p>
         <ul>
           <li>Divided a /24 network into multiple smaller subnets.</li>
@@ -496,8 +473,7 @@
       <div class="lab">
         <h3>VLANs &amp; Trunking in Packet Tracer</h3>
         <p>
-          Segmented a simulated network into multiple VLANs and configured trunk ports
-          to control broadcast domains.
+          Segmented a simulated network into multiple VLANs and configured trunk ports to control broadcast domains.
         </p>
         <ul>
           <li>Created separate VLANs for users, servers, and management.</li>
@@ -511,8 +487,7 @@
     <section id="contact" class="card page">
       <h2>Contact</h2>
       <p>
-        I am actively seeking internships and entry-level roles in IT support and
-        networking.
+        I am actively seeking internships and entry-level roles in IT support and networking.
       </p>
 
       <ul class="contact-list">
@@ -525,7 +500,6 @@
             fbocoum1.github.io/Networking-portfolio
           </a>
         </li>
-        <!-- Replace with your real LinkedIn profile URL when ready -->
         <li>
           <strong>LinkedIn:</strong>
           <a href="https://www.linkedin.com" target="_blank" rel="noopener">
@@ -553,42 +527,32 @@
   </footer>
 
   <script>
-    <script>
-  // show only one section at a time
-  const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
-  const pages = document.querySelectorAll(".page");
+    // show only one section at a time
+    const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
+    const pages = document.querySelectorAll(".page");
 
-  function showPage(id) {
-    pages.forEach((p) => {
-      p.classList.toggle("active-page", "#" + p.id === id);
-    });
+    function showPage(id) {
+      pages.forEach((p) => {
+        p.classList.toggle("active-page", "#" + p.id === id);
+      });
+      navLinks.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === id);
+      });
+    }
+
+    // default: show home
+    showPage("#home");
+
     navLinks.forEach((link) => {
-      link.classList.toggle("active", link.getAttribute("href") === id);
+      link.addEventListener("click", (e) => {
+        const href = link.getAttribute("href");
+        if (href.startsWith("#")) {
+          e.preventDefault();
+          showPage(href);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      });
     });
-  }
-
-  // default: show home
-  showPage("#home");
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      const href = link.getAttribute("href");
-      if (href.startsWith("#")) {
-        e.preventDefault();
-        showPage(href);
-        // scroll to top so it feels like a slide change
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    });
-  });
-</script>
-
   </script>
 </body>
 </html>
-
-
-
-
-
-
