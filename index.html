@@ -311,7 +311,7 @@
   <!-- ===== Main content ===== -->
   <main class="main">
     <!-- Home / About -->
-    <section id="home" class="card">
+    <section id="home" class="card page">
       <div class="home-header">
         <div class="profile-photo">
           <!-- update image path if needed -->
@@ -330,9 +330,10 @@
 
       <p class="bio">
         I am a Networking Systems &amp; Technologies student at Olive-Harvey College in
-        Chicago, graduating in May 2026. I enjoy building hands-on labs, including
+        Chicago, graduating in May 2026, where I have already earned a basic certificate
+        in Networking Systems and Technologies. I enjoy building hands-on labs, including
         Windows Active Directory domains, IPv4 subnetting, and VLAN configuration, to
-        strengthen my troubleshooting skills and prepare for industry certifications.
+        strengthen my troubleshooting skills and deepen my networking knowledge.
         Before networking, I earned a Financial Accounting Technician diploma from the
         Institute Universitaire de Gestion in Bamako, Mali, and completed internships
         in finance and tax administration. After moving to the United States, I worked
@@ -360,8 +361,8 @@
     </section>
 
     <!-- Skills & knowledge -->
-    <section id="skills" class="card">
-      <h2>Skills I Can Explain</h2>
+    <section id="skills" class="card page">
+      <h2>Skills I had learned</h2>
       <p>
         These are skills I have actually practiced in labs, projects, or jobs and can
         walk through step-by-step.
@@ -450,7 +451,7 @@
     </section>
 
     <!-- Hands-on labs -->
-    <section id="labs" class="card">
+    <section id="labs" class="card page">
       <h2>Hands-On Labs</h2>
       <p>
         These labs show how I apply networking concepts using real tools and
@@ -498,7 +499,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="card">
+    <section id="contact" class="card page">
       <h2>Contact</h2>
       <p>
         I am actively seeking internships and entry-level roles in IT support and
@@ -543,18 +544,40 @@
   </footer>
 
   <script>
-    // simple nav active highlight
-    document.querySelectorAll(".nav-links a").forEach((link) => {
-      link.addEventListener("click", () => {
-        document
-          .querySelectorAll(".nav-links a")
-          .forEach((l) => l.classList.remove("active"));
-        link.classList.add("active");
-      });
+    <script>
+  // show only one section at a time
+  const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
+  const pages = document.querySelectorAll(".page");
+
+  function showPage(id) {
+    pages.forEach((p) => {
+      p.classList.toggle("active-page", "#" + p.id === id);
     });
+    navLinks.forEach((link) => {
+      link.classList.toggle("active", link.getAttribute("href") === id);
+    });
+  }
+
+  // default: show home
+  showPage("#home");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      if (href.startsWith("#")) {
+        e.preventDefault();
+        showPage(href);
+        // scroll to top so it feels like a slide change
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    });
+  });
+</script>
+
   </script>
 </body>
 </html>
+
 
 
 
