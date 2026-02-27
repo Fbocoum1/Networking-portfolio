@@ -7,7 +7,7 @@ This repository contains my personal networking portfolio website. It is a singl
 
 ## Overview
 
-The portfolio highlights my background as a Networking Systems & Technologies student at Olive-Harvey College, the skills I am learning and practicing, my hands-on labs, and my contact information. I am preparing to start working in networking and IT support after my graduation in May 2026.
+The portfolio highlights my background as a Networking Systems & Technologies student at Olive-Harvey College, the skills I am learning and practicing, my hands-on labs, and my contact information. 
 
 The site is organized into several sections that display one at a time (Home, Skills I’m Learning and Practicing, Hands-On Labs, Contact), plus a top navigation link to download my resume.
 
@@ -35,7 +35,7 @@ The site is organized into several sections that display one at a time (Home, Sk
 
 - **Contact**  
   - Email, phone, city, and links to my portfolio and GitHub profile.  
-  - Statement that I am seeking internships and entry-level networking / IT positions.
+  -  I am preparing to start working in networking and IT support after my graduation in May 2026.
 
 ## Files
 
