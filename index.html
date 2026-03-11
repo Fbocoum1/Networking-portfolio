@@ -59,27 +59,27 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.5rem 1rem; /* Increased from 0.4rem */
+      padding: 0.5rem 1rem;
     }
 
     .nav-brand {
       font-weight: 700;
       letter-spacing: 0.03em;
       color: var(--accent);
-      font-size: 1.1rem; /* Slightly larger for better tap target */
+      font-size: 1.1rem;
     }
 
     .nav-links {
       display: flex;
-      gap: 0.5rem; /* Reduced from 0.75rem */
+      gap: 0.5rem;
       align-items: center;
       flex-wrap: wrap;
     }
 
     .nav-links a {
-      font-size: 0.85rem; /* Slightly smaller */
+      font-size: 0.85rem;
       color: var(--text-muted);
-      padding: 0.4rem 0.8rem; /* Adjusted padding */
+      padding: 0.4rem 0.8rem;
       border-radius: 999px;
       transition: background 0.2s, color 0.2s;
     }
@@ -90,10 +90,9 @@
       color: #ffffff;
     }
 
-    /* ===== MOBILE NAV - SMALLER ===== */
     @media (max-width: 640px) {
       .nav-inner {
-        padding: 0.4rem 1rem; /* Smaller padding on mobile */
+        padding: 0.4rem 1rem;
         flex-direction: column;
         align-items: flex-start;
         gap: 0.3rem;
@@ -121,7 +120,7 @@
     .main {
       max-width: 960px;
       width: 100%;
-      padding: 5.5rem 1rem 3rem; /* Reduced from 6.3rem - fixes mobile overlap */
+      padding: 5.5rem 1rem 3rem;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -130,7 +129,7 @@
 
     @media (max-width: 600px) {
       .main {
-        padding-top: 6.2rem; /* Reduced from 7.5rem */
+        padding-top: 6.2rem;
       }
     }
 
@@ -367,55 +366,4 @@
       <ul class="tag-list">
         <li><span class="tag-title">IPv4 Subnetting & Addressing:</span> Design CIDR schemes, assign host addresses, gateways for multi-department networks</li>
         <li><span class="tag-title">VLANs & Trunking:</span> Configure VLANs and trunk ports in Cisco Packet Tracer for traffic segmentation</li>
-        <li><span class="tag-title">Router/Switch Config:</span> Set hostnames, passwords, interfaces, save running configs in Packet Tracer</li>
-        <li><span class="tag-title">Troubleshooting:</span> Use ping/tracert to diagnose connectivity, identify addressing/cabling issues</li>
-      </ul>
-
-      <h3 style="margin-top: 1.5rem;">Windows and Active Directory</h3>
-      <ul class="tag-list">
-        <li><span class="tag-title">Windows Server VM:</span> Install, configure networking, promote to domain controller</li>
-        <li><span class="tag-title">Active Directory:</span> Create OUs, users, groups; join clients to domain</li>
-        <li><span class="tag-title">User Management:</span> Reset passwords, apply group policies for restrictions</li>
-      </ul>
-
-      <h3 style="margin-top: 1.5rem;">Tools, Scripting & Web</h3>
-      <ul class="tag-list">
-        <li><span class="tag-title">Wireshark & Packet Tracer:</span> Capture/analyze traffic, visualize packet flows</li>
-        <li><span class="tag-title">Bash/PowerShell:</span> Automate network tasks, file management</li>
-        <li><span class="tag-title">HTML/CSS:</span> Build responsive portfolio sites with modern navigation</li>
-      </ul>
-
-      <h3 style="margin-top: 1.5rem;">Professional Skills</h3>
-      <ul class="tag-list">
-        <li><span class="tag-title">Technical Support:</span> Launch servers, troubleshoot hardware, escalate issues</li>
-        <li><span class="tag-title">Customer Service:</span> Support testing candidates under pressure</li>
-        <li><span class="tag-title">Multitasking:</span> Balance work, studies, and 25+ year export business</li>
-      </ul>
-    </section>
-
-    <!-- Hands-on labs -->
-    <section id="labs" class="card page">
-      <h2>Hands-On Labs</h2>
-      <p>Practical networking projects using industry-standard tools:</p>
-
-      <div class="lab">
-        <h3>Active Directory Home Lab</h3>
-        <p>Built complete Windows domain environment with Domain Controller and client PCs.</p>
-        <ul>
-          <li>Installed Windows Server, promoted to Domain Controller with DNS/DHCP</li>
-          <li>Created OU structure, user accounts, groups for departments</li>
-          <li>Joined Windows clients to domain, verified GPO application</li>
-        </ul>
-      </div>
-
-      <div class="lab">
-        <h3>IPv4 Subnetting Lab</h3>
-        <p>Designed addressing scheme for small business with multiple departments.</p>
-        <ul>
-          <li>Divided /24 network into efficient subnets using CIDR notation</li>
-          <li>Assigned IP ranges, subnet masks, gateways to each department</li>
-          <li>Verified connectivity between hosts using Packet Tracer pings</li>
-        </ul>
-      </div>
-
-      <div class="lab
+        <li><span
