@@ -22,8 +22,7 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg-gradient);
       min-height: 100vh;
       color: var(--text-main);
@@ -60,26 +59,27 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.4rem 1rem;
+      padding: 0.5rem 1rem; /* Increased from 0.4rem */
     }
 
     .nav-brand {
       font-weight: 700;
       letter-spacing: 0.03em;
       color: var(--accent);
+      font-size: 1.1rem; /* Slightly larger for better tap target */
     }
 
     .nav-links {
       display: flex;
-      gap: 0.75rem;
+      gap: 0.5rem; /* Reduced from 0.75rem */
       align-items: center;
       flex-wrap: wrap;
     }
 
     .nav-links a {
-      font-size: 0.9rem;
+      font-size: 0.85rem; /* Slightly smaller */
       color: var(--text-muted);
-      padding: 0.3rem 0.7rem;
+      padding: 0.4rem 0.8rem; /* Adjusted padding */
       border-radius: 999px;
       transition: background 0.2s, color 0.2s;
     }
@@ -90,11 +90,30 @@
       color: #ffffff;
     }
 
+    /* ===== MOBILE NAV - SMALLER ===== */
     @media (max-width: 640px) {
       .nav-inner {
+        padding: 0.4rem 1rem; /* Smaller padding on mobile */
         flex-direction: column;
         align-items: flex-start;
+        gap: 0.3rem;
+      }
+      
+      .nav-brand {
+        font-size: 1rem;
+      }
+      
+      .nav-links {
         gap: 0.4rem;
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .nav-links a {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.7rem;
+        flex: 1;
+        text-align: center;
       }
     }
 
@@ -102,7 +121,7 @@
     .main {
       max-width: 960px;
       width: 100%;
-      padding: 6.3rem 1rem 3rem;
+      padding: 5.5rem 1rem 3rem; /* Reduced from 6.3rem - fixes mobile overlap */
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -111,7 +130,7 @@
 
     @media (max-width: 600px) {
       .main {
-        padding-top: 7.5rem;
+        padding-top: 6.2rem; /* Reduced from 7.5rem */
       }
     }
 
@@ -128,9 +147,7 @@
       }
     }
 
-    .card h1,
-    .card h2,
-    .card h3 {
+    .card h1, .card h2, .card h3 {
       margin-bottom: 0.75rem;
       color: var(--text-main);
     }
@@ -141,7 +158,7 @@
       line-height: 1.6;
     }
 
-    /* ===== Page visibility (slide-by-slide) ===== */
+    /* ===== Page visibility ===== */
     .page {
       display: none;
     }
@@ -151,11 +168,6 @@
     }
 
     /* ===== Home card ===== */
-    .home-header {
-      display: flex;
-      flex-direction: vertical;
-    }
-
     .home-header {
       display: flex;
       flex-direction: column;
@@ -301,10 +313,8 @@
       <div class="nav-brand">Fatoumata Y Bocoum</div>
       <div class="nav-links">
         <a href="#home" class="active">Home</a>
-        <a href="Fatoumata_Bocoum_Resume_CLEAN.pdf" target="_blank" rel="noopener">
-          Resume
-        </a>
-        <a href="#skills">Skills I’m Learning and Practicing</a>
+        <a href="Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="#skills">Skills</a>
         <a href="#labs">Hands-On Labs</a>
         <a href="#contact">Contact</a>
       </div>
@@ -314,266 +324,98 @@
   <!-- ===== Main content ===== -->
   <main class="main">
     <!-- Home / About -->
-    <section id="home" class="card page">
+    <section id="home" class="card page active-page">
       <div class="home-header">
         <div class="profile-photo">
-          <!-- profile photo in same folder as index.html -->
           <img src="Fatoumata 2.jpg" alt="Profile photo of Fatoumata Y Bocoum" />
         </div>
         <h1 class="home-title">Welcome to my website</h1>
         <p class="home-subtitle">Fatoumata Y Bocoum</p>
         <p class="home-meta">
-          Networking Systems and Technologies Student • Olive-Harvey College • Chicago, IL • Graduating May 2026
+          Certified Networking Professional • Olive-Harvey College • Chicago, IL • AAS May 2026
         </p>
         <p class="home-meta">
           Phone: <a href="tel:17737076813">773-707-6813</a> •
-          Email: <a href="mailto:fbocoum1@student.ccc.edu">fbocoum1@student.ccc.edu</a>
+          Email: <a href="mailto:adja_lovely@yahoo.fr">adja_lovely@yahoo.fr</a>
         </p>
       </div>
 
       <p class="bio">
-       A results-driven Networking & IT professional with hands-on technical expertise and a 
-proven record of cross-industry adaptability, ready to contribute immediately to 
-enterprise networking and IT operations environments. Currently completing a 
-Networking Systems & Technologies degree at Olive-Harvey College in Chicago (May 
-2026), the candidate has built a strong technical foundation through practical lab work 
-encompassing Windows Active Directory domain configuration, IPv4 subnetting, and 
-VLAN setup — skills directly aligned with industry certification pathways and real-world 
-IT infrastructure demands. 
-This technical proficiency is complemented by a rich professional background that spans 
-multiple industries and continents. Prior to entering the networking field, a Financial 
-Accounting Technician diploma was earned from the Institut Universitaire de Gestion in 
-Bamako, Mali, followed by practical experience through internships in both finance and 
-tax administration. This grounding in structured, detail-oriented financial work 
-cultivated analytical thinking and a disciplined work ethic that continues to inform the 
-approach to technical problem-solving. 
-After relocating to the United States, valuable entrepreneurial experience was gained 
-through the family business before serving as a Package Handler at UPS — a role that 
-reinforced resilience, precision, and the ability to perform under pressure. These qualities 
-now underpin a dual commitment to academic excellence and professional service. 
-Currently working part-time as a Testing Specialist at Olive-Harvey College while 
-simultaneously managing a small export business. 
-With a unique combination of international perspective, financial literacy, and growing 
-technical expertise in networking and IT infrastructure, this professional is actively 
-seeking opportunities to apply hands-on skills in real-world networking environments, 
-contribute to high-performing IT teams, and pursue continued growth toward industry 
-certifications. 
+        I am a certified Networking Systems & Technologies professional (Basic Networking Certificate, Dec 2025; AAS expected May 2026, 3.95 GPA) with hands-on experience in Active Directory domain configuration, Cisco Packet Tracer VLANs, IPv4 subnetting, Wireshark packet analysis, and network troubleshooting. 
+        
+        Before focusing on IT, I earned a Financial Accounting Technician diploma from Institut Universitaire de Gestion in Bamako, Mali, and gained practical experience in finance and tax administration. After relocating to the United States, I built entrepreneurial skills managing a family export business and worked as a Package Handler at UPS, developing precision and performance under pressure.
+        
+        Currently, I work part-time as a Testing Specialist at Olive-Harvey College while completing my degree and pursuing CompTIA certifications. Fluent in English, French, and Bambara, I bring international perspective, technical skills, and proven reliability to entry-level networking and IT support roles.
       </p>
 
       <div class="btn-row">
-        <a
-          href="Professional_Biography.pdf"
-          class="btn secondary"
-          target="_blank"
-          rel="noopener"
-        >
+        <a href="Biography.pdf" class="btn secondary" target="_blank" rel="noopener">
           Biography (PDF)
         </a>
-        <a
-          href="https://github.com/fbocoum1/Networking-portfolio"
-          class="btn secondary"
-          target="_blank"
-          rel="noopener"
-        >
+        <a href="https://github.com/fbocoum1/Networking-portfolio" class="btn secondary" target="_blank" rel="noopener">
           GitHub Repo
         </a>
       </div>
     </section>
 
-    <!-- Skills & knowledge -->
+    <!-- Skills -->
     <section id="skills" class="card page">
-      <h2>Skills I’m Learning and Practicing</h2>
-      <p>
-        These are skills I have practiced in labs, projects, or jobs: 
-      </p>
+      <h2>Skills I'm Learning and Practicing</h2>
+      <p>Hands-on technical skills practiced in labs, projects, and professional work:</p>
 
       <h3>Networking and Troubleshooting</h3>
       <ul class="tag-list">
-        <li>
-          <span class="tag-title">Designing simple IP addressing plans:</span>
-          create IPv4 subnets for small networks, assign host addresses, and choose gateways so devices can communicate.
-        </li>
-        <li>
-          <span class="tag-title">Configuring VLANs and trunk ports in Packet Tracer:</span>
-          separate traffic for different groups (for example students vs. staff) and verify connectivity.
-        </li>
-        <li>
-          <span class="tag-title">Basic router and switch configuration:</span>
-          set hostnames, passwords, interfaces, and save running configurations in Packet Tracer labs.
-        </li>
-        <li>
-          <span class="tag-title">Using ping and tracert for troubleshooting:</span>
-          test connectivity, identify where traffic stops, and decide if the problem is addressing, cabling, or configuration.
-        </li>
+        <li><span class="tag-title">IPv4 Subnetting & Addressing:</span> Design CIDR schemes, assign host addresses, gateways for multi-department networks</li>
+        <li><span class="tag-title">VLANs & Trunking:</span> Configure VLANs and trunk ports in Cisco Packet Tracer for traffic segmentation</li>
+        <li><span class="tag-title">Router/Switch Config:</span> Set hostnames, passwords, interfaces, save running configs in Packet Tracer</li>
+        <li><span class="tag-title">Troubleshooting:</span> Use ping/tracert to diagnose connectivity, identify addressing/cabling issues</li>
       </ul>
 
       <h3 style="margin-top: 1.5rem;">Windows and Active Directory</h3>
       <ul class="tag-list">
-        <li>
-          <span class="tag-title">Installing Windows Server in a virtual machine:</span>
-          create a VM, configure network settings, and prepare it to become a domain controller.
-        </li>
-        <li>
-          <span class="tag-title">Creating a basic Active Directory domain:</span>
-          promote a server to domain controller, create OUs, users, and groups, and join Windows clients to the domain.
-        </li>
-        <li>
-          <span class="tag-title">Managing user accounts and simple policies:</span>
-          reset passwords, disable accounts, and apply basic group policies such as password or desktop restrictions.
-        </li>
+        <li><span class="tag-title">Windows Server VM:</span> Install, configure networking, promote to domain controller</li>
+        <li><span class="tag-title">Active Directory:</span> Create OUs, users, groups; join clients to domain</li>
+        <li><span class="tag-title">User Management:</span> Reset passwords, apply group policies for restrictions</li>
       </ul>
 
-      <h3 style="margin-top: 1.5rem;">Tools, Scripting &amp; Web</h3>
+      <h3 style="margin-top: 1.5rem;">Tools, Scripting & Web</h3>
       <ul class="tag-list">
-        <li>
-          <span class="tag-title">Using Wireshark and Packet Tracer:</span>
-          capture traffic, follow pings, and visualize how packets move through a small network.
-        </li>
-        <li>
-          <span class="tag-title">Writing simple scripts:</span>
-          use Bash or PowerShell to automate basic tasks such as listing network settings or creating folders.
-        </li>
-        <li>
-          <span class="tag-title">Building HTML/CSS pages:</span>
-          create responsive sections, navigation, and buttons like the ones on this portfolio site.
-        </li>
+        <li><span class="tag-title">Wireshark & Packet Tracer:</span> Capture/analyze traffic, visualize packet flows</li>
+        <li><span class="tag-title">Bash/PowerShell:</span> Automate network tasks, file management</li>
+        <li><span class="tag-title">HTML/CSS:</span> Build responsive portfolio sites with modern navigation</li>
       </ul>
 
-      <h3 style="margin-top: 1.5rem;">Professional &amp; Soft Skills</h3>
+      <h3 style="margin-top: 1.5rem;">Professional Skills</h3>
       <ul class="tag-list">
-        <li>
-          <span class="tag-title">Customer service under pressure:</span>
-          support students and test-takers as a Testing Specialist while keeping a calm and professional attitude.
-        </li>
-        <li>
-          <span class="tag-title">Time management and reliability:</span>
-          balance part-time work, classes, labs, and a small export business while maintaining strong grades.
-        </li>
-        <li>
-          <span class="tag-title">Teamwork and communication:</span>
-          collaborate with classmates in labs and coordinate with coworkers in the testing center and family business.
-        </li>
+        <li><span class="tag-title">Technical Support:</span> Launch servers, troubleshoot hardware, escalate issues</li>
+        <li><span class="tag-title">Customer Service:</span> Support testing candidates under pressure</li>
+        <li><span class="tag-title">Multitasking:</span> Balance work, studies, and 25+ year export business</li>
       </ul>
     </section>
 
     <!-- Hands-on labs -->
     <section id="labs" class="card page">
       <h2>Hands-On Labs</h2>
-      <p>
-        These labs show how I apply networking concepts using real tools and configurations.
-      </p>
+      <p>Practical networking projects using industry-standard tools:</p>
 
       <div class="lab">
         <h3>Active Directory Home Lab</h3>
-        <p>
-          Built a small Windows domain with one Domain Controller and multiple client PCs to practice user management and basic group policy.
-        </p>
+        <p>Built complete Windows domain environment with Domain Controller and client PCs.</p>
         <ul>
-          <li>Installed Windows Server and promoted it to a Domain Controller.</li>
-          <li>Configured DNS and DHCP and joined client machines to the domain.</li>
-          <li>Created OU structure, user accounts, and groups for departments.</li>
+          <li>Installed Windows Server, promoted to Domain Controller with DNS/DHCP</li>
+          <li>Created OU structure, user accounts, groups for departments</li>
+          <li>Joined Windows clients to domain, verified GPO application</li>
         </ul>
       </div>
 
       <div class="lab">
         <h3>IPv4 Subnetting Lab</h3>
-        <p>
-          Designed and documented subnet schemes for a small business network and verified connectivity between hosts.
-        </p>
+        <p>Designed addressing scheme for small business with multiple departments.</p>
         <ul>
-          <li>Divided a /24 network into multiple smaller subnets.</li>
-          <li>Assigned IP addresses, masks, and gateways to each subnet.</li>
-          <li>Tested connectivity using pings in Packet Tracer.</li>
+          <li>Divided /24 network into efficient subnets using CIDR notation</li>
+          <li>Assigned IP ranges, subnet masks, gateways to each department</li>
+          <li>Verified connectivity between hosts using Packet Tracer pings</li>
         </ul>
       </div>
 
-      <div class="lab">
-        <h3>VLANs &amp; Trunking in Packet Tracer</h3>
-        <p>
-          Segmented a simulated network into multiple VLANs and configured trunk ports to control broadcast domains.
-        </p>
-        <ul>
-          <li>Created separate VLANs for users, servers, and management.</li>
-          <li>Configured trunk links between switches with the correct native VLAN.</li>
-          <li>Verified inter-VLAN communication using router-on-a-stick.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="card page">
-      <h2>Contact</h2>
-      <p>
-        I plan to begin working full-time in networking and IT support after graduation and welcome connections about future opportunities.
-      </p>
-
-      <ul class="contact-list">
-        <li><strong>Email:</strong> fbocoum1@student.ccc.edu</li>
-        <li><strong>Phone:</strong> 773-707-6813</li>
-        <li><strong>Location:</strong> Chicago, Illinois, USA</li>
-        <li>
-          <strong>GitHub:</strong>
-          <a href="https://fbocoum1.github.io/Networking-portfolio/" target="_blank" rel="noopener">
-            fbocoum1.github.io/Networking-portfolio
-          </a>
-        </li>
-        <li>
-          <strong>LinkedIn:</strong>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener">
-            LinkedIn Profile
-          </a>
-        </li>
-      </ul>
-
-      <div class="btn-row">
-        <a href="mailto:fbocoum1@student.ccc.edu" class="btn">Email Me</a>
-        <a
-          href="Fatoumata_Y_Bocoum-Resume.pdf"
-          class="btn secondary"
-          target="_blank"
-          rel="noopener"
-        >
-          Download Resume
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2026 Fatoumata Y Bocoum • Networking Portfolio
-  </footer>
-
-  <script>
-    // show only one section at a time
-    const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
-    const pages = document.querySelectorAll(".page");
-
-    function showPage(id) {
-      pages.forEach((p) => {
-        p.classList.toggle("active-page", "#" + p.id === id);
-      });
-      navLinks.forEach((link) => {
-        link.classList.toggle("active", link.getAttribute("href") === id);
-      });
-    }
-
-    // default: show home
-    showPage("#home");
-
-    navLinks.forEach((link) => {
-      link.addEventListener("click", (e) => {
-        const href = link.getAttribute("href");
-        if (href.startsWith("#")) {
-          e.preventDefault();
-          showPage(href);
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-      });
-    });
-  </script>
-</body>
-</html>
-
-
-
-
+      <div class="lab
