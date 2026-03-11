@@ -2,48 +2,46 @@
 
 This repository contains my personal networking portfolio website. It is a single-page site built with HTML, CSS, and a small amount of JavaScript, and it is hosted using GitHub Pages.
 
-- **Live site:** https://fbocoum1.github.io/Networking-portfolio/
-- **Repository:** https://github.com/fbocoum1/Networking-portfolio
+- **Live site:** [https://fbocoum1.github.io/Networking-portfolio/](https://fbocoum1.github.io/Networking-portfolio/)
+- **Repository:** [https://github.com/fbocoum1/Networking-portfolio](https://github.com/fbocoum1/Networking-portfolio)
 
 ## Overview
 
-The portfolio highlights my background as a Networking Systems & Technologies student at Olive-Harvey College, the skills I am learning and practicing, my hands-on labs, and my contact information. 
+The portfolio highlights my background as a certified Networking Systems & Technologies professional at Olive-Harvey College (Basic Networking Certificate, Dec 2025; AAS expected May 2026), my hands-on labs, and my contact information. 
 
-The site is organized into several sections that display one at a time (Home, Skills I’m Learning and Practicing, Hands-On Labs, Contact), plus a top navigation link to download my resume.
+The site is organized into several sections that display one at a time (Home, Skills I'm Learning and Practicing, Hands-On Labs, Contact), plus a top navigation link to download my resume.
 
 ## Sections
 
 - **Home**  
   - Welcome message and profile photo.  
-  - Short biography describing my path from accounting and logistics into networking.  
+  - Biography describing my path from accounting and logistics into networking/IT.  
   - Phone number and email for direct contact.
 
 - **Resume**  
-  - A navigation item at the top that opens my current resume PDF (`Fatoumata_Bocoum_Resume_CLEAN.pdf`) in a new tab.
+  - Navigation item that opens my current resume PDF (`Resume.pdf`) in a new tab.
 
-- **Skills I’m Learning and Practicing**  
-  - Networking and troubleshooting skills I have practiced in labs (IP addressing and subnetting, VLANs and trunking, basic router and switch configuration, using ping and tracert to troubleshoot).  
-  - Windows Server and Active Directory skills (installing a VM, creating a domain, joining clients, managing user accounts and simple policies).  
-  - Tools, scripting, and web skills (Wireshark, Cisco Packet Tracer, VMware/VirtualBox, simple Bash and PowerShell scripts, building HTML/CSS pages like this portfolio).  
-  - Professional and soft skills (customer service, communication, time management, teamwork, attention to detail).
+- **Skills I'm Learning and Practicing**  
+  - Networking skills practiced in labs (IPv4 subnetting, VLANs/trunking, router/switch configuration, ping/tracert troubleshooting).  
+  - Windows Server/Active Directory (VM installation, domain creation, user management).  
+  - Tools/scripting/web (Wireshark, Packet Tracer, PowerShell, HTML/CSS portfolio development).  
+  - Professional skills (technical support, customer service, multitasking).
 
 - **Hands-On Labs**  
-  - Short writeups of key labs that I have learned, include:
-    - Active Directory home lab (domain controller, DNS/DHCP, OUs, users and groups).  
-    - IPv4 subnetting lab (designing subnets, assigning addresses and gateways, verifying connectivity).  
-    - VLANs and trunking in Packet Tracer (separating traffic and using router-on-a-stick).
+  - **Active Directory home lab**: Domain controller setup, DNS/DHCP, OUs/users/groups.  
+  - **IPv4 subnetting lab**: CIDR subnet design, address/gateway assignment, connectivity verification.  
+  - **VLANs & trunking**: Traffic segmentation, trunk ports, router-on-a-stick configuration.
 
 - **Contact**  
-  - Email, phone, city, and links to my portfolio and GitHub profile.  
-  -  I am preparing to start working in networking and IT support after my graduation in May 2026.
+  - Email, phone, Chicago location, portfolio/GitHub/LinkedIn links.  
+  - Available for networking/IT support roles after graduation (May 2026).
 
 ## Files
 
-- `index.html` – Main single-page portfolio (includes HTML, CSS, and JavaScript).  
-- `Fatoumata_Y_Bocoum Resume.pdf` – Current resume, opened from the top navigation.  
-- `My Biography.pdf` – One-page biography with more background information.  
-- `Fatoumata 2.jpg` – Profile photo used on the Home section.  
-- *(Optional)* Additional images or screenshots if added later for labs.
+- `index.html` – Main single-page portfolio (HTML, CSS, JavaScript).  
+- `Resume.pdf` – Current professional resume.  
+- `Biography.pdf` – Detailed professional background.  
+- `Fatoumata 2.jpg` – Profile photo for Home section.
 
 ## How to View Locally
 
