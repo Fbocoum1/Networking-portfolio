@@ -41,6 +41,7 @@
       padding-left: 0;
     }
 
+    /* ===== Navigation ===== */
     nav {
       position: fixed;
       top: 0;
@@ -58,27 +59,26 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 1rem;
     }
 
     .nav-brand {
       font-weight: 700;
       letter-spacing: 0.03em;
       color: var(--accent);
-      font-size: 1.1rem;
     }
 
     .nav-links {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.75rem;
       align-items: center;
       flex-wrap: wrap;
     }
 
     .nav-links a {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
-      padding: 0.4rem 0.8rem;
+      padding: 0.3rem 0.7rem;
       border-radius: 999px;
       transition: background 0.2s, color 0.2s;
     }
@@ -91,34 +91,17 @@
 
     @media (max-width: 640px) {
       .nav-inner {
-        padding: 0.4rem 1rem;
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.3rem;
-      }
-      
-      .nav-brand {
-        font-size: 1rem;
-      }
-      
-      .nav-links {
         gap: 0.4rem;
-        width: 100%;
-        justify-content: center;
-      }
-      
-      .nav-links a {
-        font-size: 0.8rem;
-        padding: 0.35rem 0.7rem;
-        flex: 1;
-        text-align: center;
       }
     }
 
+    /* ===== Layout ===== */
     .main {
       max-width: 960px;
       width: 100%;
-      padding: 5.5rem 1rem 3rem;
+      padding: 6.3rem 1rem 3rem;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -127,7 +110,7 @@
 
     @media (max-width: 600px) {
       .main {
-        padding-top: 6.2rem;
+        padding-top: 7.5rem;
       }
     }
 
@@ -155,6 +138,7 @@
       line-height: 1.6;
     }
 
+    /* ===== Page visibility ===== */
     .page {
       display: none;
     }
@@ -163,6 +147,7 @@
       display: block;
     }
 
+    /* ===== Home card ===== */
     .home-header {
       display: flex;
       flex-direction: column;
@@ -209,6 +194,7 @@
       text-align: left;
     }
 
+    /* ===== Skills lists ===== */
     .tag-list {
       margin-top: 0.5rem;
     }
@@ -224,6 +210,7 @@
       color: var(--accent);
     }
 
+    /* ===== Hands-on labs ===== */
     .lab {
       margin-top: 1.5rem;
     }
@@ -244,6 +231,7 @@
       color: var(--text-muted);
     }
 
+    /* ===== Buttons ===== */
     .btn-row {
       display: flex;
       flex-wrap: wrap;
@@ -279,6 +267,7 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
     }
 
+    /* ===== Contact ===== */
     .contact-list {
       margin-top: 0.5rem;
     }
@@ -287,23 +276,34 @@
       margin-bottom: 0.35rem;
       color: var(--text-muted);
     }
+
+    /* ===== Footer ===== */
+    footer {
+      padding: 1.5rem 1rem 2.5rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.85rem;
+    }
   </style>
 </head>
 <body>
+  <!-- ===== Navigation ===== -->
   <nav>
     <div class="nav-inner">
       <div class="nav-brand">Fatoumata Y Bocoum</div>
       <div class="nav-links">
         <a href="#home" class="active">Home</a>
-        <a href="Resume.pdf" target="_blank" rel="noopener">Resume</a>
-        <a href="#skills">Skills</a>
+        <a href="Fatoumata_Bocoum_Resume_CLEAN.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="#skills">Skills I'm Learning and Practicing</a>
         <a href="#labs">Hands-On Labs</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
 
+  <!-- ===== Main content ===== -->
   <main class="main">
+    <!-- Home / About -->
     <section id="home" class="card page active-page">
       <div class="home-header">
         <div class="profile-photo">
@@ -321,4 +321,148 @@
       </div>
 
       <p class="bio">
-        I am a certified Networking Systems & Technologies professional (Basic Networking Certificate, Dec 2025; AAS expected May 2026, 3.95 GPA) with hands-on experience in Active Directory domain
+        I am a certified Networking Systems & Technologies professional (Basic Networking Certificate, Dec 2025; AAS expected May 2026, 3.95 GPA) with hands-on experience in Active Directory domain configuration, Cisco Packet Tracer VLANs, IPv4 subnetting, Wireshark packet analysis, and network troubleshooting. 
+        
+        Before focusing on IT, I earned a Financial Accounting Technician diploma from Institut Universitaire de Gestion in Bamako, Mali, and gained practical experience in finance and tax administration. After relocating to the United States, I built entrepreneurial skills managing a family export business and worked as a Package Handler at UPS, developing precision and performance under pressure.
+        
+        Currently, I work part-time as a Testing Specialist at Olive-Harvey College while completing my degree and pursuing CompTIA certifications. Fluent in English, French, and Bambara, I bring international perspective, technical skills, and proven reliability to entry-level networking and IT support roles.
+      </p>
+
+      <div class="btn-row">
+        <a href="Professional_Biography.pdf" class="btn secondary" target="_blank" rel="noopener">
+          Biography (PDF)
+        </a>
+        <a href="https://github.com/fbocoum1/Networking-portfolio" class="btn secondary" target="_blank" rel="noopener">
+          GitHub Repo
+        </a>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="card page">
+      <h2>Skills I'm Learning and Practicing</h2>
+      <p>Hands-on technical skills practiced in labs, projects, and professional work:</p>
+
+      <h3>Networking and Troubleshooting</h3>
+      <ul class="tag-list">
+        <li><span class="tag-title">IPv4 Subnetting & Addressing:</span> Design CIDR schemes, assign host addresses, gateways for multi-department networks</li>
+        <li><span class="tag-title">VLANs & Trunking:</span> Configure VLANs and trunk ports in Cisco Packet Tracer for traffic segmentation</li>
+        <li><span class="tag-title">Router/Switch Config:</span> Set hostnames, passwords, interfaces, save running configs in Packet Tracer</li>
+        <li><span class="tag-title">Troubleshooting:</span> Use ping/tracert to diagnose connectivity, identify addressing/cabling issues</li>
+      </ul>
+
+      <h3 style="margin-top: 1.5rem;">Windows and Active Directory</h3>
+      <ul class="tag-list">
+        <li><span class="tag-title">Windows Server VM:</span> Install, configure networking, promote to domain controller</li>
+        <li><span class="tag-title">Active Directory:</span> Create OUs, users, groups; join clients to domain</li>
+        <li><span class="tag-title">User Management:</span> Reset passwords, apply group policies for restrictions</li>
+      </ul>
+
+      <h3 style="margin-top: 1.5rem;">Tools, Scripting & Web</h3>
+      <ul class="tag-list">
+        <li><span class="tag-title">Wireshark & Packet Tracer:</span> Capture/analyze traffic, visualize packet flows</li>
+        <li><span class="tag-title">Bash/PowerShell:</span> Automate network tasks, file management</li>
+        <li><span class="tag-title">HTML/CSS:</span> Build responsive portfolio sites with modern navigation</li>
+      </ul>
+
+      <h3 style="margin-top: 1.5rem;">Professional Skills</h3>
+      <ul class="tag-list">
+        <li><span class="tag-title">Technical Support:</span> Launch servers, troubleshoot hardware, escalate issues</li>
+        <li><span class="tag-title">Customer Service:</span> Support testing candidates under pressure</li>
+        <li><span class="tag-title">Multitasking:</span> Balance work, studies, and 25+ year export business</li>
+      </ul>
+    </section>
+
+    <!-- Hands-on labs -->
+    <section id="labs" class="card page">
+      <h2>Hands-On Labs</h2>
+      <p>Practical networking projects using industry-standard tools:</p>
+
+      <div class="lab">
+        <h3>Active Directory Home Lab</h3>
+        <p>Built complete Windows domain environment with Domain Controller and client PCs.</p>
+        <ul>
+          <li>Installed Windows Server, promoted to Domain Controller with DNS/DHCP</li>
+          <li>Created OU structure, user accounts, groups for departments</li>
+          <li>Joined Windows clients to domain, verified GPO application</li>
+        </ul>
+      </div>
+
+      <div class="lab">
+        <h3>IPv4 Subnetting Lab</h3>
+        <p>Designed addressing scheme for small business with multiple departments.</p>
+        <ul>
+          <li>Divided /24 network into efficient subnets using CIDR notation</li>
+          <li>Assigned IP ranges, subnet masks, gateways to each department</li>
+          <li>Verified connectivity between hosts using Packet Tracer pings</li>
+        </ul>
+      </div>
+
+      <div class="lab">
+        <h3>VLANs & Trunking</h3>
+        <p>Segmented network into VLANs with inter-VLAN routing.</p>
+        <ul>
+          <li>Created VLANs for users, servers, management networks</li>
+          <li>Configured trunk ports with native VLAN between switches</li>
+          <li>Implemented router-on-a-stick for inter-VLAN communication</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="card page">
+      <h2>Contact</h2>
+      <p>Available for entry-level networking/IT support roles in Chicago. Open to internships and full-time positions post-graduation (May 2026).</p>
+
+      <ul class="contact-list">
+        <li><strong>Email:</strong> <a href="mailto:adja_lovely@yahoo.fr">adja_lovely@yahoo.fr</a></li>
+        <li><strong>Phone:</strong> <a href="tel:17737076813">773-707-6813</a></li>
+        <li><strong>Location:</strong> Chicago, Illinois, USA</li>
+        <li><strong>Portfolio:</strong> <a href="https://fbocoum1.github.io/Networking-portfolio/" target="_blank">fbocoum1.github.io/Networking-portfolio</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/fbocoum1/Networking-portfolio" target="_blank">github.com/fbocoum1</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/fatoumata-y-bocoum-360343135" target="_blank">Fatoumata Y Bocoum</a></li>
+      </ul>
+
+      <div class="btn-row">
+        <a href="mailto:adja_lovely@yahoo.fr" class="btn">Email Me</a>
+        <a href="Fatoumata_Bocoum_Resume_CLEAN.pdf" class="btn secondary" target="_blank" rel="noopener">Download Resume</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Fatoumata Y Bocoum • Networking Portfolio
+  </footer>
+
+  <script>
+    const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
+    const pages = document.querySelectorAll(".page");
+
+    function showPage(id) {
+      pages.forEach((p) => p.classList.toggle("active-page", "#" + p.id === id));
+      navLinks.forEach((link) => {
+        const isActive = link.getAttribute("href") === id;
+        link.classList.toggle("active", isActive);
+        if (isActive) link.setAttribute("aria-current", "page");
+        else link.removeAttribute("aria-current");
+      });
+    }
+
+    // Handle initial load with hash
+    const initialHash = window.location.hash || "#home";
+    showPage(initialHash);
+
+    // Navigation clicks
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const href = link.getAttribute("href");
+        if (href.startsWith("#")) {
+          e.preventDefault();
+          showPage(href);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
