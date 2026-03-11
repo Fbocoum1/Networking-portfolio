@@ -59,28 +59,30 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.4rem 1rem;
+      padding: 0.6rem 1rem; /* Increased from 0.4rem */
     }
 
     .nav-brand {
       font-weight: 700;
       letter-spacing: 0.03em;
       color: var(--accent);
+      font-size: 1.1rem; /* Slightly larger */
     }
 
     .nav-links {
       display: flex;
-      gap: 0.75rem;
+      gap: 0.5rem; /* Reduced gap for mobile */
       align-items: center;
       flex-wrap: wrap;
     }
 
     .nav-links a {
-      font-size: 0.9rem;
+      font-size: 0.85rem; /* Slightly smaller */
       color: var(--text-muted);
-      padding: 0.3rem 0.7rem;
+      padding: 0.4rem 0.8rem; /* Slightly more padding */
       border-radius: 999px;
       transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
     }
 
     .nav-links a.active,
@@ -89,11 +91,30 @@
       color: #ffffff;
     }
 
+    /* Mobile Navigation - Taller and better spaced */
     @media (max-width: 640px) {
       .nav-inner {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 0.4rem;
+        align-items: stretch;
+        gap: 0.6rem; /* More gap between brand and links */
+        padding: 0.8rem 1rem; /* Taller nav */
+      }
+      
+      .nav-brand {
+        text-align: center;
+        padding: 0.2rem 0;
+      }
+      
+      .nav-links {
+        flex-direction: column;
+        gap: 0.3rem;
+        width: 100%;
+      }
+      
+      .nav-links a {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        text-align: center;
       }
     }
 
@@ -101,7 +122,7 @@
     .main {
       max-width: 960px;
       width: 100%;
-      padding: 6.3rem 1rem 3rem;
+      padding: 9rem 1rem 3rem; /* Increased base padding for taller nav */
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -110,7 +131,7 @@
 
     @media (max-width: 600px) {
       .main {
-        padding-top: 8.5rem;
+        padding-top: 10.5rem; /* Extra space for mobile nav */
       }
     }
 
@@ -210,25 +231,40 @@
       color: var(--accent);
     }
 
-    /* ===== Hands-on labs ===== */
-    .lab {
+    /* ===== Hands-on labs & Blog posts ===== */
+    .lab, .blog-post {
       margin-top: 1.5rem;
     }
 
-    .lab h3 {
+    .lab h3, .blog-post h3 {
       font-size: 1.05rem;
       margin-bottom: 0.35rem;
     }
 
-    .lab ul {
+    .lab ul, .blog-post ul {
       margin-top: 0.35rem;
       padding-left: 1.1rem;
       list-style: disc;
     }
 
-    .lab ul li {
+    .lab ul li, .blog-post ul li {
       margin-bottom: 0.35rem;
       color: var(--text-muted);
+    }
+
+    .blog-post h3 a {
+      color: var(--text-main);
+      transition: color 0.2s;
+    }
+
+    .blog-post h3 a:hover {
+      color: var(--accent);
+    }
+
+    .blog-meta {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
     }
 
     /* ===== Buttons ===== */
@@ -293,9 +329,10 @@
       <div class="nav-brand">Fatoumata Y Bocoum</div>
       <div class="nav-links">
         <a href="#home" class="active">Home</a>
-        <a href="Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="Fatoumata_Bocoum_Resume_CLEAN.pdf" target="_blank" rel="noopener">Resume</a>
         <a href="#skills">Skills I'm Learning and Practicing</a>
         <a href="#labs">Hands-On Labs</a>
+        <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -329,7 +366,7 @@
       </p>
 
       <div class="btn-row">
-        <a href="Biography.pdf" class="btn secondary" target="_blank" rel="noopener">
+        <a href="Professional_Biography.pdf" class="btn secondary" target="_blank" rel="noopener">
           Biography (PDF)
         </a>
         <a href="https://github.com/fbocoum1/Networking-portfolio" class="btn secondary" target="_blank" rel="noopener">
@@ -409,6 +446,30 @@
       </div>
     </section>
 
+    <!-- NEW Blog Section -->
+    <section id="blog" class="card page">
+      <h2>Networking Blog</h2>
+      <p>Sharing my networking journey, lab walkthroughs, and technical tips.</p>
+
+      <div class="blog-post">
+        <h3><a href="blog-active-directory.html">My First Active Directory Lab - Complete Walkthrough</a></h3>
+        <p class="blog-meta">March 11, 2026 • 5 min read</p>
+        <p>Step-by-step guide to building a Windows domain from scratch: installing Windows Server, promoting to Domain Controller, creating OUs/users, and joining clients.</p>
+      </div>
+
+      <div class="blog-post">
+        <h3><a href="blog-subnetting.html">IPv4 Subnetting for Beginners - CIDR Explained</a></h3>
+        <p class="blog-meta">March 8, 2026 • 7 min read</p>
+        <p>Practical examples of dividing /24 networks into efficient subnets for multi-department businesses with gateway assignments.</p>
+      </div>
+
+      <div class="blog-post">
+        <h3><a href="blog-vlan.html">VLANs & Trunking - Network Segmentation Done Right</a></h3>
+        <p class="blog-meta">Feb 25, 2026 • 6 min read</p>
+        <p>Cisco Packet Tracer demo: creating VLANs, trunk ports, native VLANs, and router-on-a-stick inter-VLAN routing.</p>
+      </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact" class="card page">
       <h2>Contact</h2>
@@ -466,4 +527,3 @@
   </script>
 </body>
 </html>
-
