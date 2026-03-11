@@ -41,7 +41,7 @@
       padding-left: 0;
     }
 
-    /* ===== Navigation - FIXED FOR MOBILE ===== */
+    /* ===== Navigation ===== */
     nav {
       position: fixed;
       top: 0;
@@ -91,10 +91,9 @@
       color: #ffffff;
     }
 
-    /* MOBILE NAV - HORIZONTAL + COMPACT */
     @media (max-width: 640px) {
       .nav-inner {
-        flex-direction: row; /* Stay horizontal */
+        flex-direction: row;
         align-items: center;
         justify-content: space-between;
         padding: 0.5rem 0.8rem;
@@ -106,7 +105,7 @@
       }
       
       .nav-links {
-        flex-direction: row; /* Horizontal on mobile */
+        flex-direction: row;
         gap: 0.2rem;
         flex-wrap: wrap;
       }
@@ -117,21 +116,20 @@
       }
     }
 
-    /* ===== Layout - PERFECT SPACING ===== */
+    /* ===== Layout ===== */
     .main {
       max-width: 960px;
       width: 100%;
-      padding: 6.5rem 1rem 3rem; /* Desktop */
+      padding: 6.5rem 1rem 3rem;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       gap: 2rem;
     }
 
-    /* MOBILE - ENOUGH SPACE FOR FULL FACE */
     @media (max-width: 640px) {
       .main {
-        padding-top: 9rem; /* FIXED - Shows full face */
+        padding-top: 9rem;
       }
     }
 
@@ -159,13 +157,13 @@
       line-height: 1.6;
     }
 
-    /* ===== Page visibility ===== */
+    /* ===== Page visibility - FIXED ===== */
     .page {
       display: none;
     }
 
     .page.active-page {
-      display: block;
+      display: block !important;
     }
 
     /* ===== Home card ===== */
@@ -241,13 +239,13 @@
       margin-bottom: 0.35rem;
     }
 
-    .lab ul, .blog-post ul {
+    .lab ul {
       margin-top: 0.35rem;
       padding-left: 1.1rem;
       list-style: disc;
     }
 
-    .lab ul li, .blog-post ul li {
+    .lab ul li {
       margin-bottom: 0.35rem;
       color: var(--text-muted);
     }
@@ -330,8 +328,8 @@
       <div class="nav-links">
         <a href="#home" class="active">Home</a>
         <a href="Resume.pdf" target="_blank" rel="noopener">Resume</a>
-        <a href="#skills">Skills</a>
-        <a href="#labs">Labs</a>
+        <a href="#skills">Skills I'm Learning and Practicing</a>
+        <a href="#labs">Hands-On Labs</a>
         <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
       </div>
@@ -435,5 +433,100 @@
         </ul>
       </div>
 
-      <div
+      <div class="lab">
+        <h3>VLANs & Trunking</h3>
+        <p>Segmented network into VLANs with inter-VLAN routing.</p>
+        <ul>
+          <li>Created VLANs for users, servers, management networks</li>
+          <li>Configured trunk ports with native VLAN between switches</li>
+          <li>Implemented router-on-a-stick for inter-VLAN communication</li>
+        </ul>
+      </div>
+    </section>
 
+    <!-- Blog Section -->
+    <section id="blog" class="card page">
+      <h2>Networking Blog</h2>
+      <p>Sharing my networking journey, lab walkthroughs, and technical tips.</p>
+
+      <div class="blog-post">
+        <h3><a href="blog-active-directory.html">My First Active Directory Lab - Complete Walkthrough</a></h3>
+        <p class="blog-meta">March 11, 2026 • 5 min read</p>
+        <p>Step-by-step guide to building a Windows domain from scratch: installing Windows Server, promoting to Domain Controller, creating OUs/users, and joining clients.</p>
+      </div>
+
+      <div class="blog-post">
+        <h3><a href="blog-subnetting.html">IPv4 Subnetting for Beginners - CIDR Explained</a></h3>
+        <p class="blog-meta">March 8, 2026 • 7 min read</p>
+        <p>Practical examples of dividing /24 networks into efficient subnets for multi-department businesses with gateway assignments.</p>
+      </div>
+
+      <div class="blog-post">
+        <h3><a href="blog-vlan.html">VLANs & Trunking - Network Segmentation Done Right</a></h3>
+        <p class="blog-meta">Feb 25, 2026 • 6 min read</p>
+        <p>Cisco Packet Tracer demo: creating VLANs, trunk ports, native VLANs, and router-on-a-stick inter-VLAN routing.</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="card page">
+      <h2>Contact</h2>
+      <p>Available for entry-level networking/IT support roles in Chicago. Open to internships and full-time positions post-graduation (May 2026).</p>
+
+      <ul class="contact-list">
+        <li><strong>Email:</strong> <a href="mailto:adja_lovely@yahoo.fr">adja_lovely@yahoo.fr</a></li>
+        <li><strong>Phone:</strong> <a href="tel:17737076813">773-707-6813</a></li>
+        <li><strong>Location:</strong> Chicago, Illinois, USA</li>
+        <li><strong>Portfolio:</strong> <a href="https://fbocoum1.github.io/Networking-portfolio/" target="_blank">fbocoum1.github.io/Networking-portfolio</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/fbocoum1/Networking-portfolio" target="_blank">github.com/fbocoum1</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/fatoumata-y-bocoum-360343135" target="_blank">Fatoumata Y Bocoum</a></li>
+      </ul>
+
+      <div class="btn-row">
+        <a href="mailto:adja_lovely@yahoo.fr" class="btn">Email Me</a>
+        <a href="Resume.pdf" class="btn secondary" target="_blank" rel="noopener">Download Resume</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Fatoumata Y Bocoum • Networking Portfolio
+  </footer>
+
+  <script>
+    const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
+    const pages = document.querySelectorAll(".page");
+
+    function showPage(id) {
+      // Hide all pages first
+      pages.forEach((p) => p.classList.remove("active-page"));
+      // Show target page
+      document.querySelector(id).classList.add("active-page");
+      
+      // Update active nav link
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === id) {
+          link.classList.add("active");
+        }
+      });
+    }
+
+    // Handle initial load with hash
+    const initialHash = window.location.hash || "#home";
+    showPage(initialHash);
+
+    // Navigation clicks
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const href = link.getAttribute("href");
+        if (href.startsWith("#")) {
+          e.preventDefault();
+          showPage(href);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
