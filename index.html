@@ -41,7 +41,6 @@
       padding-left: 0;
     }
 
-    /* ===== Navigation ===== */
     nav {
       position: fixed;
       top: 0;
@@ -116,7 +115,6 @@
       }
     }
 
-    /* ===== Layout ===== */
     .main {
       max-width: 960px;
       width: 100%;
@@ -157,7 +155,6 @@
       line-height: 1.6;
     }
 
-    /* ===== Page visibility ===== */
     .page {
       display: none;
     }
@@ -166,7 +163,6 @@
       display: block;
     }
 
-    /* ===== Home card ===== */
     .home-header {
       display: flex;
       flex-direction: column;
@@ -213,7 +209,6 @@
       text-align: left;
     }
 
-    /* ===== Skills lists ===== */
     .tag-list {
       margin-top: 0.5rem;
     }
@@ -229,7 +224,6 @@
       color: var(--accent);
     }
 
-    /* ===== Hands-on labs ===== */
     .lab {
       margin-top: 1.5rem;
     }
@@ -250,7 +244,6 @@
       color: var(--text-muted);
     }
 
-    /* ===== Buttons ===== */
     .btn-row {
       display: flex;
       flex-wrap: wrap;
@@ -286,7 +279,6 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
     }
 
-    /* ===== Contact ===== */
     .contact-list {
       margin-top: 0.5rem;
     }
@@ -295,18 +287,9 @@
       margin-bottom: 0.35rem;
       color: var(--text-muted);
     }
-
-    /* ===== Footer ===== */
-    footer {
-      padding: 1.5rem 1rem 2.5rem;
-      text-align: center;
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 0.85rem;
-    }
   </style>
 </head>
 <body>
-  <!-- ===== Navigation ===== -->
   <nav>
     <div class="nav-inner">
       <div class="nav-brand">Fatoumata Y Bocoum</div>
@@ -320,9 +303,7 @@
     </div>
   </nav>
 
-  <!-- ===== Main content ===== -->
   <main class="main">
-    <!-- Home / About -->
     <section id="home" class="card page active-page">
       <div class="home-header">
         <div class="profile-photo">
@@ -340,107 +321,4 @@
       </div>
 
       <p class="bio">
-        I am a certified Networking Systems & Technologies professional (Basic Networking Certificate, Dec 2025; AAS expected May 2026, 3.95 GPA) with hands-on experience in Active Directory domain configuration, Cisco Packet Tracer VLANs, IPv4 subnetting, Wireshark packet analysis, and network troubleshooting. 
-        
-        Before focusing on IT, I earned a Financial Accounting Technician diploma from Institut Universitaire de Gestion in Bamako, Mali, and gained practical experience in finance and tax administration. After relocating to the United States, I built entrepreneurial skills managing a family export business and worked as a Package Handler at UPS, developing precision and performance under pressure.
-        
-        Currently, I work part-time as a Testing Specialist at Olive-Harvey College while completing my degree and pursuing CompTIA certifications. Fluent in English, French, and Bambara, I bring international perspective, technical skills, and proven reliability to entry-level networking and IT support roles.
-      </p>
-
-      <div class="btn-row">
-        <a href="Biography.pdf" class="btn secondary" target="_blank" rel="noopener">
-          Biography (PDF)
-        </a>
-        <a href="https://github.com/fbocoum1/Networking-portfolio" class="btn secondary" target="_blank" rel="noopener">
-          GitHub Repo
-        </a>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="card page">
-      <h2>Skills I'm Learning and Practicing</h2>
-      <p>Hands-on technical skills practiced in labs, projects, and professional work:</p>
-
-      <h3>Networking and Troubleshooting</h3>
-      <ul class="tag-list">
-        <li><span class="tag-title">IPv4 Subnetting & Addressing:</span> Design CIDR schemes, assign host addresses, gateways for multi-department networks</li>
-        <li><span class="tag-title">VLANs & Trunking:</span> Configure VLANs and trunk ports in Cisco Packet Tracer for traffic segmentation</li>
-        <li><span class="tag-title">Active Directory:</span> Domain controller setup, user/group management, OU structure</li>
-        <li><span class="tag-title">Wireshark Analysis:</span> Packet capture, protocol identification, troubleshooting network issues</li>
-      </ul>
-
-      <h3>Programming & Tools</h3>
-      <ul class="tag-list">
-        <li><span class="tag-title">Python:</span> Scripting, automation, network data processing</li>
-        <li><span class="tag-title">Cisco Packet Tracer:</span> Network simulation, configuration, testing</li>
-        <li><span class="tag-title">Git/GitHub:</span> Version control, project collaboration</li>
-      </ul>
-    </section>
-
-    <!-- Hands-On Labs -->
-    <section id="labs" class="card page">
-      <h2>Hands-On Labs</h2>
-      <p>Detailed networking labs completed with Cisco Packet Tracer and real-world scenarios:</p>
-      
-      <div class="lab">
-        <h3>VLAN Segmentation Lab</h3>
-        <ul>
-          <li>Created 4 VLANs (Sales, HR, IT, Guests) across 3 switches</li>
-          <li>Configured trunk ports with 802.1Q encapsulation</li>
-          <li>Assigned 192.168.10.0/24 subnets with proper gateway IPs</li>
-        </ul>
-      </div>
-
-      <div class="lab">
-        <h3>Subnetting Enterprise Network</h3>
-        <ul>
-          <li>Divided 172.16.0.0/16 into 8 departments (/24 subnets)</li>
-          <li>Calculated 254 usable hosts per department</li>
-          <li>Documented IP ranges, broadcast addresses, and gateways</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="card page">
-      <h2>Contact</h2>
-      <p>Ready to discuss networking opportunities or projects. Reach me directly:</p>
-      
-      <ul class="contact-list">
-        <li>📞 <a href="tel:17737076813">773-707-6813</a></li>
-        <li>✉️ <a href="mailto:adja_lovely@yahoo.fr">adja_lovely@yahoo.fr</a></li>
-        <li>💼 <a href="https://github.com/fbocoum1" target="_blank" rel="noopener">github.com/fbocoum1</a></li>
-        <li>📍 Chicago, IL - Available for local or remote networking roles</li>
-      </ul>
-    </section>
-  </main>
-
-  <!-- Navigation JavaScript -->
-  <script>
-    document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Hide all pages
-        document.querySelectorAll('.page').forEach(page => {
-          page.classList.remove('active-page');
-        });
-        
-        // Remove active class from all nav links
-        document.querySelectorAll('.nav-links a').forEach(navLink => {
-          navLink.classList.remove('active');
-        });
-        
-        // Show target page and activate link
-        const targetId = this.getAttribute('href').substring(1);
-        const targetPage = document.getElementById(targetId);
-        if (targetPage) {
-          targetPage.classList.add('active-page');
-          this.classList.add('active');
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+        I am a certified Networking Systems & Technologies professional (Basic Networking Certificate, Dec 2025; AAS expected May 2026, 3.95 GPA) with hands-on experience in Active Directory domain
