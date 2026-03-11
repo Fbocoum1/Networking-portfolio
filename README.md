@@ -19,7 +19,7 @@ The site is organized into several sections that display one at a time (Home, Sk
   - Phone number and email for direct contact.
 
 - **Resume**  
-  - A navigation item at the top that opens my current resume PDF (`Fatoumata_Y_Bocoum Resume.pdf`) in a new tab.
+  - A navigation item at the top that opens my current resume PDF (`Fatoumata_Bocoum_Resume_CLEAN.pdf`) in a new tab.
 
 - **Skills I’m Learning and Practicing**  
   - Networking and troubleshooting skills I have practiced in labs (IP addressing and subnetting, VLANs and trunking, basic router and switch configuration, using ping and tracert to troubleshoot).  
