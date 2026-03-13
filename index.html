@@ -10,7 +10,7 @@
       --bg-gradient: linear-gradient(135deg, #5b6bff, #a14bff);
       --card-bg: #ffffff;
       --text-main: #222222;
-      --text-muted: #333333;  /* Darkened for better contrast */
+      --text-muted: #333333;
       --accent: #5b6bff;
     }
 
@@ -194,7 +194,7 @@
       color: var(--accent);
     }
 
-    /* FIXED TABLE - Mobile responsive */
+    /* FIXED TABLE - Complete gateway display */
     pre {
       background: #f5f5f5;
       padding: 1rem;
@@ -215,10 +215,10 @@
     }
 
     th, td {
-      padding: 0.6rem 0.4rem;
+      padding: 0.75rem 0.5rem;
       text-align: left;
       border-bottom: 1px solid #eee;
-      word-break: break-word;
+      word-break: break-all;
     }
 
     th {
@@ -228,23 +228,25 @@
       font-size: 0.85rem;
     }
 
-    /* Mobile table fix */
+    /* Mobile table - FIXED for complete gateway */
     @media (max-width: 640px) {
       table {
-        font-size: 0.8rem;
+        font-size: 0.82rem;
         display: block;
         overflow-x: auto;
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
+        margin: 1rem -0.5rem;
       }
       
       th, td {
-        padding: 0.5rem 0.3rem;
-        min-width: 60px;
+        padding: 0.55rem 0.45rem;
+        min-width: 65px;
       }
       
-      th:nth-child(4), td:nth-child(4) { min-width: 85px; } /* Range */
-      th:nth-child(5), td:nth-child(5) { min-width: 75px; } /* Gateway */
+      th:nth-child(1), td:nth-child(1) { min-width: 55px; }
+      th:nth-child(4), td:nth-child(4) { min-width: 90px; }
+      th:nth-child(5), td:nth-child(5) { min-width: 80px; }
     }
 
     .contact-list { margin-top: 0.5rem; }
@@ -297,8 +299,8 @@
         <div class="profile-photo">
           <img src="Fatoumata 2.jpg" alt="Fatoumata Y Bocoum" />
         </div>
-        <h1 class="home-subtitle">Fatoumata Y Bocoum</h1> <!-- NEW: Main h1 for accessibility -->
-        <h2 class="home-title">Welcome to my networking portfolio</h2> <!-- CHANGED: h2 for hierarchy -->
+        <h1 class="home-subtitle">Fatoumata Y Bocoum</h1>
+        <h2 class="home-title">Welcome to my networking portfolio</h2>
         <p class="home-meta">
           Certified Networking Professional • Olive-Harvey College • Chicago, IL • AAS May 2026
         </p>
@@ -309,11 +311,11 @@
       </div>
 
       <p class="bio">
-        I am a certified Networking Systems & Technologies professional (Basic Networking Certificate, Dec 2025; AAS expected May 2026, 3.95 GPA) with hands-on experience in IPv4 subnetting, Wireshark packet analysis, and network troubleshooting. 
+        I am a certified Networking Systems & Technologies professional (Basic Networking Certificate, Dec 2025; AAS expected May 2026, 3.95 GPA) <strong>passionate about building reliable, secure networks</strong> that power modern businesses.
         
         Before focusing on IT, I earned a Financial Accounting Technician diploma from Institut Universitaire de Gestion in Bamako, Mali, and gained practical experience in finance and tax administration. After relocating to the United States, I built entrepreneurial skills managing a family export business and worked as a Package Handler at UPS, developing precision and performance under pressure.
         
-        Currently, I work part-time as a Testing Specialist at Olive-Harvey College while completing my degree and pursuing CompTIA certifications. Fluent in English, French, and Bambara, I bring international perspective, technical skills, and proven reliability to entry-level networking and IT support roles.
+        Currently, I work part-time as a Testing Specialist at Olive-Harvey College while completing my degree and pursuing CompTIA certifications. Fluent in English, French, and Bambara, I bring international perspective, <strong>dedication to technical excellence</strong>, and proven reliability to entry-level networking and IT support roles.
       </p>
 
       <div class="btn-row">
@@ -325,7 +327,7 @@
     <!-- Projects & Labs -->
     <section id="projects" class="card page">
       <h2>Projects & Labs</h2>
-      <p>These examples highlight the networking, systems administration, and scripting skills I use in labs, coursework, and professional work.</p> <!-- NEW -->
+      <p>These examples highlight the networking, systems administration, and scripting skills I use in labs, coursework, and professional work.</p>
 
       <div class="lab">
         <h3>Networking and Troubleshooting</h3>
@@ -362,9 +364,9 @@
       <div class="lab">
         <h3>Professional Skills</h3>
         <ul>
-          <li><span class="tag-title">Technical Support:</span> Deploy and manage servers, troubleshoot hardware, escalate issues</li> <!-- UPDATED -->
+          <li><span class="tag-title">Technical Support:</span> Deploy and manage servers, troubleshoot hardware, escalate issues</li>
           <li><span class="tag-title">Customer Service:</span> Support testing candidates under pressure</li>
-          <li><span class="tag-title">Multitasking:</span> Balance part-time work, studies, and responsibilities in a 25+ year family export business</li> <!-- UPDATED -->
+          <li><span class="tag-title">Multitasking:</span> Balance part-time work, studies, and responsibilities in a 25+ year family export business</li>
         </ul>
       </div>
     </section>
@@ -387,18 +389,18 @@ for char in name:
     print(f"{char}   |  {ascii_code:2d}  | {binary}")
         </pre>
         <p><strong>Output:</strong> F=70(01000110), A=65(01000001), T=84(01010100), O=79(01001111), U=85(01010101), M=77(01001101), A=65(01000001), T=84(01010100), A=65(01000001).</p>
-        <p>This script reinforces my understanding of ASCII and binary representations, which supports low-level networking and protocol concepts.</p> <!-- NEW -->
+        <p>This script reinforces my understanding of ASCII and binary representations, which supports low-level networking and protocol concepts.</p>
       </div>
 
       <div class="lab">
         <h3>Subnetting Exercise: Business Network</h3>
         <table>
           <tr><th>Department</th><th>Hosts</th><th>Subnet</th><th>Range</th><th>Gateway</th></tr>
-          <tr><td>Sales</td><td>60</td><td>/26</td><td>192.168.1.0-63</td><td>192.1...</td></tr>
+          <tr><td>Sales</td><td>60</td><td>/26</td><td>192.168.1.0-63</td><td>192.168.1.1</td></tr>
           <tr><td>IT</td><td>25</td><td>/27</td><td>192.168.1.64-95</td><td>192.168.1.65</td></tr>
           <tr><td>HR</td><td>12</td><td>/28</td><td>192.168.1.96-111</td><td>192.168.1.97</td></tr>
         </table>
-        <p>This subnetting example demonstrates how I design efficient VLSM layouts for real-world business networks.</p> <!-- NEW -->
+        <p>This subnetting example demonstrates how I design efficient VLSM layouts for real-world business networks.</p>
         <p>Took 192.168.1.0/24 and split it into three subnets using VLSM.</p>
       </div>
 
@@ -417,7 +419,7 @@ for i in range(1, 11):  # First 10 hosts
     <!-- Contact -->
     <section id="contact" class="card page">
       <h2>Contact</h2>
-      <p>Available for entry-level networking and IT support roles in Chicago. Open to internships and full-time positions after graduation in May 2026.</p> <!-- UPDATED -->
+      <p>Available for entry-level networking and IT support roles in Chicago. Open to internships and full-time positions after graduation in May 2026.</p>
 
       <ul class="contact-list">
         <li><strong>Email:</strong> <a href="mailto:adja_lovely@yahoo.fr">adja_lovely@yahoo.fr</a></li>
@@ -446,13 +448,13 @@ for i in range(1, 11):  # First 10 hosts
     function showPage(id) {
       pages.forEach((p) => p.classList.remove("active-page"));
       const target = document.querySelector(id);
-      if (!target) return;  // IMPROVED: Guard clause
+      if (!target) return;
 
       target.classList.add("active-page");
 
       navLinks.forEach((link) => {
         link.classList.remove("active");
-        link.removeAttribute("aria-current");  // IMPROVED: Accessibility
+        link.removeAttribute("aria-current");
         if (link.getAttribute("href") === id) {
           link.classList.add("active");
           link.setAttribute("aria-current", "page");
