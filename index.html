@@ -10,7 +10,7 @@
       --bg-gradient: linear-gradient(135deg, #5b6bff, #a14bff);
       --card-bg: #ffffff;
       --text-main: #222222;
-      --text-muted: #555555;
+      --text-muted: #333333;  /* Darkened for better contrast */
       --accent: #5b6bff;
     }
 
@@ -178,8 +178,14 @@
     }
 
     /* Labs / sections */
-    .lab { margin-top: 1.5rem; }
-    .lab h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
+    .lab { 
+      margin-top: 1.75rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid #eee;
+    }
+    .lab:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+    
+    .lab h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
     .lab ul { margin-top: 0.35rem; padding-left: 1.1rem; list-style: disc; }
     .lab ul li { margin-bottom: 0.35rem; color: var(--text-muted); }
 
@@ -188,7 +194,7 @@
       color: var(--accent);
     }
 
-    /* Code / table */
+    /* FIXED TABLE - Mobile responsive */
     pre {
       background: #f5f5f5;
       padding: 1rem;
@@ -203,17 +209,42 @@
       border-collapse: collapse;
       margin: 1rem 0;
       border: 1px solid #ddd;
+      font-size: 0.9rem;
+      overflow: hidden;
+      border-radius: 0.5rem;
+    }
+
+    th, td {
+      padding: 0.6rem 0.4rem;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+      word-break: break-word;
     }
 
     th {
       background: var(--accent);
       color: white;
-      padding: 0.75rem;
+      font-weight: 600;
+      font-size: 0.85rem;
     }
 
-    td {
-      padding: 0.75rem;
-      border-bottom: 1px solid #eee;
+    /* Mobile table fix */
+    @media (max-width: 640px) {
+      table {
+        font-size: 0.8rem;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      th, td {
+        padding: 0.5rem 0.3rem;
+        min-width: 60px;
+      }
+      
+      th:nth-child(4), td:nth-child(4) { min-width: 85px; } /* Range */
+      th:nth-child(5), td:nth-child(5) { min-width: 75px; } /* Gateway */
     }
 
     .contact-list { margin-top: 0.5rem; }
@@ -227,6 +258,7 @@
       font-size: 0.85rem;
     }
 
+    /* Mobile improvements */
     @media (max-width: 640px) {
       .main { padding-top: 9rem; }
       .nav-inner {
@@ -239,12 +271,13 @@
       .nav-brand { font-size: 0.95rem; }
       .nav-links { flex-direction: row; gap: 0.2rem; flex-wrap: wrap; }
       .nav-links a { font-size: 0.75rem; padding: 0.25rem 0.4rem; }
+      .card { padding: 1.75rem 1.2rem; }
     }
   </style>
 </head>
 <body>
   <!-- Navigation -->
-  <nav>
+  <nav aria-label="Main navigation">
     <div class="nav-inner">
       <div class="nav-brand">Fatoumata Y Bocoum</div>
       <div class="nav-links">
@@ -262,10 +295,10 @@
     <section id="home" class="card page active-page">
       <div class="home-header">
         <div class="profile-photo">
-          <img src="Fatoumata 2.jpg" alt="Profile photo of Fatoumata Y Bocoum" />
+          <img src="Fatoumata 2.jpg" alt="Fatoumata Y Bocoum" />
         </div>
-        <h1 class="home-title">Welcome to my website</h1>
-        <p class="home-subtitle">Fatoumata Y Bocoum</p>
+        <h1 class="home-subtitle">Fatoumata Y Bocoum</h1> <!-- NEW: Main h1 for accessibility -->
+        <h2 class="home-title">Welcome to my networking portfolio</h2> <!-- CHANGED: h2 for hierarchy -->
         <p class="home-meta">
           Certified Networking Professional • Olive-Harvey College • Chicago, IL • AAS May 2026
         </p>
@@ -285,14 +318,14 @@
 
       <div class="btn-row">
         <a href="Biography.pdf" class="btn secondary" target="_blank" rel="noopener">Biography (PDF)</a>
-        <a href="https://github.com/fbocoum1/Networking-portfolio" class="btn secondary" target="_blank" rel="noopener">GitHub Repo</a>
+        <a href="https://github.com/fbocoum1/Networking-portfolio" class="btn secondary" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
       </div>
     </section>
 
     <!-- Projects & Labs -->
     <section id="projects" class="card page">
       <h2>Projects & Labs</h2>
-      <p>Hands-on technical skills practiced in labs, projects, and professional work:</p>
+      <p>These examples highlight the networking, systems administration, and scripting skills I use in labs, coursework, and professional work.</p> <!-- NEW -->
 
       <div class="lab">
         <h3>Networking and Troubleshooting</h3>
@@ -329,9 +362,9 @@
       <div class="lab">
         <h3>Professional Skills</h3>
         <ul>
-          <li><span class="tag-title">Technical Support:</span> Launch servers, troubleshoot hardware, escalate issues</li>
+          <li><span class="tag-title">Technical Support:</span> Deploy and manage servers, troubleshoot hardware, escalate issues</li> <!-- UPDATED -->
           <li><span class="tag-title">Customer Service:</span> Support testing candidates under pressure</li>
-          <li><span class="tag-title">Multitasking:</span> Balance work, studies, and 25+ year export business</li>
+          <li><span class="tag-title">Multitasking:</span> Balance part-time work, studies, and responsibilities in a 25+ year family export business</li> <!-- UPDATED -->
         </ul>
       </div>
     </section>
@@ -346,7 +379,7 @@
         <pre>
 name = "FATOUMATA"
 print("Name:", name)
-print("\nChar | ASCII | Binary (8-bit)")
+print("\\nChar | ASCII | Binary (8-bit)")
 print("-" * 28)
 for char in name:
     ascii_code = ord(char)
@@ -354,16 +387,18 @@ for char in name:
     print(f"{char}   |  {ascii_code:2d}  | {binary}")
         </pre>
         <p><strong>Output:</strong> F=70(01000110), A=65(01000001), T=84(01010100), O=79(01001111), U=85(01010101), M=77(01001101), A=65(01000001), T=84(01010100), A=65(01000001).</p>
+        <p>This script reinforces my understanding of ASCII and binary representations, which supports low-level networking and protocol concepts.</p> <!-- NEW -->
       </div>
 
       <div class="lab">
         <h3>Subnetting Exercise: Business Network</h3>
         <table>
           <tr><th>Department</th><th>Hosts</th><th>Subnet</th><th>Range</th><th>Gateway</th></tr>
-          <tr><td>Sales</td><td>60</td><td>/26</td><td>192.168.1.0-63</td><td>192.168.1.1</td></tr>
+          <tr><td>Sales</td><td>60</td><td>/26</td><td>192.168.1.0-63</td><td>192.1...</td></tr>
           <tr><td>IT</td><td>25</td><td>/27</td><td>192.168.1.64-95</td><td>192.168.1.65</td></tr>
           <tr><td>HR</td><td>12</td><td>/28</td><td>192.168.1.96-111</td><td>192.168.1.97</td></tr>
         </table>
+        <p>This subnetting example demonstrates how I design efficient VLSM layouts for real-world business networks.</p> <!-- NEW -->
         <p>Took 192.168.1.0/24 and split it into three subnets using VLSM.</p>
       </div>
 
@@ -382,15 +417,15 @@ for i in range(1, 11):  # First 10 hosts
     <!-- Contact -->
     <section id="contact" class="card page">
       <h2>Contact</h2>
-      <p>Available for entry-level networking/IT support roles in Chicago. Open to internships and full-time positions post-graduation (May 2026).</p>
+      <p>Available for entry-level networking and IT support roles in Chicago. Open to internships and full-time positions after graduation in May 2026.</p> <!-- UPDATED -->
 
       <ul class="contact-list">
         <li><strong>Email:</strong> <a href="mailto:adja_lovely@yahoo.fr">adja_lovely@yahoo.fr</a></li>
         <li><strong>Phone:</strong> <a href="tel:17737076813">773-707-6813</a></li>
         <li><strong>Location:</strong> Chicago, Illinois, USA</li>
-        <li><strong>Portfolio:</strong> <a href="https://fbocoum1.github.io/Networking-portfolio/" target="_blank">fbocoum1.github.io/Networking-portfolio</a></li>
-        <li><strong>GitHub:</strong> <a href="https://github.com/fbocoum1/Networking-portfolio" target="_blank">github.com/fbocoum1</a></li>
-        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/fatoumata-y-bocoum-360343135" target="_blank">Fatoumata Y Bocoum</a></li>
+        <li><strong>Portfolio:</strong> <a href="https://fbocoum1.github.io/Networking-portfolio/" target="_blank" rel="noopener noreferrer">fbocoum1.github.io/Networking-portfolio</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/fbocoum1/Networking-portfolio" target="_blank" rel="noopener noreferrer">github.com/fbocoum1</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/fatoumata-y-bocoum-360343135" target="_blank" rel="noopener noreferrer">Fatoumata Y Bocoum</a></li>
       </ul>
 
       <div class="btn-row">
@@ -411,12 +446,16 @@ for i in range(1, 11):  # First 10 hosts
     function showPage(id) {
       pages.forEach((p) => p.classList.remove("active-page"));
       const target = document.querySelector(id);
-      if (target) target.classList.add("active-page");
+      if (!target) return;  // IMPROVED: Guard clause
+
+      target.classList.add("active-page");
 
       navLinks.forEach((link) => {
         link.classList.remove("active");
+        link.removeAttribute("aria-current");  // IMPROVED: Accessibility
         if (link.getAttribute("href") === id) {
           link.classList.add("active");
+          link.setAttribute("aria-current", "page");
         }
       });
     }
