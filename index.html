@@ -12,14 +12,9 @@
       --text-main: #222222;
       --text-muted: #555555;
       --accent: #5b6bff;
-      --accent2: #a14bff;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -31,17 +26,10 @@
       align-items: center;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; padding-left: 0; }
 
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    /* ===== Navigation ===== */
+    /* Navigation */
     nav {
       position: fixed;
       top: 0;
@@ -91,32 +79,7 @@
       color: #ffffff;
     }
 
-    @media (max-width: 640px) {
-      .nav-inner {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.5rem 0.8rem;
-        gap: 0.2rem;
-      }
-      
-      .nav-brand {
-        font-size: 0.95rem;
-      }
-      
-      .nav-links {
-        flex-direction: row;
-        gap: 0.2rem;
-        flex-wrap: wrap;
-      }
-      
-      .nav-links a {
-        font-size: 0.75rem;
-        padding: 0.25rem 0.4rem;
-      }
-    }
-
-    /* ===== Layout ===== */
+    /* Layout */
     .main {
       max-width: 960px;
       width: 100%;
@@ -125,18 +88,6 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
-    }
-
-    @media (max-width: 640px) {
-      .main {
-        padding-top: 9rem;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .card {
-        padding: 2.5rem 2.5rem;
-      }
     }
 
     .card {
@@ -157,16 +108,11 @@
       line-height: 1.6;
     }
 
-    /* ===== Page visibility - FIXED ===== */
-    .page {
-      display: none;
-    }
+    /* Page visibility */
+    .page { display: none; }
+    .page.active-page { display: block !important; }
 
-    .page.active-page {
-      display: block !important;
-    }
-
-    /* ===== Home card ===== */
+    /* Home */
     .home-header {
       display: flex;
       flex-direction: column;
@@ -190,82 +136,12 @@
       object-fit: cover;
     }
 
-    .home-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-    }
+    .home-title { font-size: 1.3rem; font-weight: 700; }
+    .home-subtitle { color: var(--accent); font-weight: 600; font-size: 1.05rem; }
+    .home-meta { font-size: 0.9rem; margin-bottom: 0.2rem; }
+    .bio { margin-top: 0.5rem; font-size: 0.95rem; line-height: 1.7; text-align: left; }
 
-    .home-subtitle {
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 1.05rem;
-    }
-
-    .home-meta {
-      font-size: 0.9rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .bio {
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-      line-height: 1.7;
-      text-align: left;
-    }
-
-    /* ===== Skills lists ===== */
-    .tag-list {
-      margin-top: 0.5rem;
-    }
-
-    .tag-list li {
-      margin-bottom: 0.4rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .tag-title {
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    /* ===== Hands-on labs & Blog posts ===== */
-    .lab, .blog-post {
-      margin-top: 1.5rem;
-    }
-
-    .lab h3, .blog-post h3 {
-      font-size: 1.05rem;
-      margin-bottom: 0.35rem;
-    }
-
-    .lab ul {
-      margin-top: 0.35rem;
-      padding-left: 1.1rem;
-      list-style: disc;
-    }
-
-    .lab ul li {
-      margin-bottom: 0.35rem;
-      color: var(--text-muted);
-    }
-
-    .blog-post h3 a {
-      color: var(--text-main);
-      transition: color 0.2s;
-    }
-
-    .blog-post h3 a:hover {
-      color: var(--accent);
-    }
-
-    .blog-meta {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-bottom: 0.5rem;
-    }
-
-    /* ===== Buttons ===== */
+    /* Buttons */
     .btn-row {
       display: flex;
       flex-wrap: wrap;
@@ -301,42 +177,86 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
     }
 
-    /* ===== Contact ===== */
-    .contact-list {
-      margin-top: 0.5rem;
+    /* Labs / sections */
+    .lab { margin-top: 1.5rem; }
+    .lab h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
+    .lab ul { margin-top: 0.35rem; padding-left: 1.1rem; list-style: disc; }
+    .lab ul li { margin-bottom: 0.35rem; color: var(--text-muted); }
+
+    .tag-title {
+      font-weight: 600;
+      color: var(--accent);
     }
 
-    .contact-list li {
-      margin-bottom: 0.35rem;
-      color: var(--text-muted);
+    /* Code / table */
+    pre {
+      background: #f5f5f5;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      font-size: 0.85rem;
+      margin: 1rem 0;
     }
 
-    /* ===== Footer ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background: var(--accent);
+      color: white;
+      padding: 0.75rem;
+    }
+
+    td {
+      padding: 0.75rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .contact-list { margin-top: 0.5rem; }
+    .contact-list li { margin-bottom: 0.35rem; color: var(--text-muted); }
+
+    /* Footer */
     footer {
       padding: 1.5rem 1rem 2.5rem;
       text-align: center;
       color: rgba(255, 255, 255, 0.9);
       font-size: 0.85rem;
     }
+
+    @media (max-width: 640px) {
+      .main { padding-top: 9rem; }
+      .nav-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 0.8rem;
+        gap: 0.2rem;
+      }
+      .nav-brand { font-size: 0.95rem; }
+      .nav-links { flex-direction: row; gap: 0.2rem; flex-wrap: wrap; }
+      .nav-links a { font-size: 0.75rem; padding: 0.25rem 0.4rem; }
+    }
   </style>
 </head>
 <body>
-  <!-- ===== Navigation ===== -->
+  <!-- Navigation -->
   <nav>
     <div class="nav-inner">
       <div class="nav-brand">Fatoumata Y Bocoum</div>
       <div class="nav-links">
         <a href="#home" class="active">Home</a>
         <a href="Resume.pdf" target="_blank" rel="noopener">Resume</a>
-        <a href="#skills">Skills I'm Learning and Practicing</a>
-        <a href="#labs">Hands-On Labs</a>
+        <a href="#projects">Projects & Labs</a>
         <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
 
-  <!-- ===== Main content ===== -->
   <main class="main">
     <!-- Home / About -->
     <section id="home" class="card page active-page">
@@ -356,7 +276,7 @@
       </div>
 
       <p class="bio">
-        I am a certified Networking Systems & Technologies professional (Basic Networking Certificate, Dec 2025; AAS expected May 2026, 3.95 GPA) with hands-on experience in Active Directory domain configuration, Cisco Packet Tracer VLANs, IPv4 subnetting, Wireshark packet analysis, and network troubleshooting. 
+        I am a certified Networking Systems & Technologies professional (Basic Networking Certificate, Dec 2025; AAS expected May 2026, 3.95 GPA) with hands-on experience in IPv4 subnetting, Wireshark packet analysis, and network troubleshooting. 
         
         Before focusing on IT, I earned a Financial Accounting Technician diploma from Institut Universitaire de Gestion in Bamako, Mali, and gained practical experience in finance and tax administration. After relocating to the United States, I built entrepreneurial skills managing a family export business and worked as a Package Handler at UPS, developing precision and performance under pressure.
         
@@ -364,107 +284,98 @@
       </p>
 
       <div class="btn-row">
-        <a href="Biography.pdf" class="btn secondary" target="_blank" rel="noopener">
-          Biography (PDF)
-        </a>
-        <a href="https://github.com/fbocoum1/Networking-portfolio" class="btn secondary" target="_blank" rel="noopener">
-          GitHub Repo
-        </a>
+        <a href="Biography.pdf" class="btn secondary" target="_blank" rel="noopener">Biography (PDF)</a>
+        <a href="https://github.com/fbocoum1/Networking-portfolio" class="btn secondary" target="_blank" rel="noopener">GitHub Repo</a>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="card page">
-      <h2>Skills I'm Learning and Practicing</h2>
+    <!-- Projects & Labs -->
+    <section id="projects" class="card page">
+      <h2>Projects & Labs</h2>
       <p>Hands-on technical skills practiced in labs, projects, and professional work:</p>
 
-      <h3>Networking and Troubleshooting</h3>
-      <ul class="tag-list">
-        <li><span class="tag-title">IPv4 Subnetting & Addressing:</span> Design CIDR schemes, assign host addresses, gateways for multi-department networks</li>
-        <li><span class="tag-title">VLANs & Trunking:</span> Configure VLANs and trunk ports in Cisco Packet Tracer for traffic segmentation</li>
-        <li><span class="tag-title">Router/Switch Config:</span> Set hostnames, passwords, interfaces, save running configs in Packet Tracer</li>
-        <li><span class="tag-title">Troubleshooting:</span> Use ping/tracert to diagnose connectivity, identify addressing/cabling issues</li>
-      </ul>
-
-      <h3 style="margin-top: 1.5rem;">Windows and Active Directory</h3>
-      <ul class="tag-list">
-        <li><span class="tag-title">Windows Server VM:</span> Install, configure networking, promote to domain controller</li>
-        <li><span class="tag-title">Active Directory:</span> Create OUs, users, groups; join clients to domain</li>
-        <li><span class="tag-title">User Management:</span> Reset passwords, apply group policies for restrictions</li>
-      </ul>
-
-      <h3 style="margin-top: 1.5rem;">Tools, Scripting & Web</h3>
-      <ul class="tag-list">
-        <li><span class="tag-title">Wireshark & Packet Tracer:</span> Capture/analyze traffic, visualize packet flows</li>
-        <li><span class="tag-title">Bash/PowerShell:</span> Automate network tasks, file management</li>
-        <li><span class="tag-title">HTML/CSS:</span> Build responsive portfolio sites with modern navigation</li>
-      </ul>
-
-      <h3 style="margin-top: 1.5rem;">Professional Skills</h3>
-      <ul class="tag-list">
-        <li><span class="tag-title">Technical Support:</span> Launch servers, troubleshoot hardware, escalate issues</li>
-        <li><span class="tag-title">Customer Service:</span> Support testing candidates under pressure</li>
-        <li><span class="tag-title">Multitasking:</span> Balance work, studies, and 25+ year export business</li>
-      </ul>
-    </section>
-
-    <!-- Hands-on labs -->
-    <section id="labs" class="card page">
-      <h2>Hands-On Labs</h2>
-      <p>Practical networking projects using industry-standard tools:</p>
-
       <div class="lab">
-        <h3>Active Directory Home Lab</h3>
-        <p>Built complete Windows domain environment with Domain Controller and client PCs.</p>
+        <h3>Networking and Troubleshooting</h3>
         <ul>
-          <li>Installed Windows Server, promoted to Domain Controller with DNS/DHCP</li>
-          <li>Created OU structure, user accounts, groups for departments</li>
-          <li>Joined Windows clients to domain, verified GPO application</li>
+          <li><span class="tag-title">IPv4 Subnetting & Addressing:</span> Design CIDR schemes, assign host addresses, gateways for multi-department networks
+            <ul style="margin-top:0.5rem;padding-left:1.5rem;">
+              <li><strong>Example:</strong> 192.168.10.0/24 → Sales (/26), IT (/27), HR (/28)</li>
+            </ul>
+          </li>
+          <li><span class="tag-title">VLANs & Trunking:</span> Configure VLANs and trunk ports in Cisco Packet Tracer for traffic segmentation</li>
+          <li><span class="tag-title">Router/Switch Config:</span> Set hostnames, passwords, interfaces, save running configs in Packet Tracer</li>
+          <li><span class="tag-title">Troubleshooting:</span> Use ping/tracert to diagnose connectivity, identify addressing/cabling issues</li>
         </ul>
       </div>
 
       <div class="lab">
-        <h3>IPv4 Subnetting Lab</h3>
-        <p>Designed addressing scheme for small business with multiple departments.</p>
+        <h3>Windows and Active Directory</h3>
         <ul>
-          <li>Divided /24 network into efficient subnets using CIDR notation</li>
-          <li>Assigned IP ranges, subnet masks, gateways to each department</li>
-          <li>Verified connectivity between hosts using Packet Tracer pings</li>
+          <li><span class="tag-title">Windows Server VM:</span> Install, configure networking, promote to domain controller</li>
+          <li><span class="tag-title">Active Directory:</span> Create OUs, users, groups; join clients to domain</li>
+          <li><span class="tag-title">User Management:</span> Reset passwords, apply group policies for restrictions</li>
         </ul>
       </div>
 
       <div class="lab">
-        <h3>VLANs & Trunking</h3>
-        <p>Segmented network into VLANs with inter-VLAN routing.</p>
+        <h3>Tools, Scripting & Web</h3>
         <ul>
-          <li>Created VLANs for users, servers, management networks</li>
-          <li>Configured trunk ports with native VLAN between switches</li>
-          <li>Implemented router-on-a-stick for inter-VLAN communication</li>
+          <li><span class="tag-title">Wireshark & Packet Tracer:</span> Capture/analyze traffic, visualize packet flows</li>
+          <li><span class="tag-title">Bash/PowerShell:</span> Automate network tasks, file management</li>
+          <li><span class="tag-title">HTML/CSS:</span> Build responsive portfolio sites with modern navigation</li>
+        </ul>
+      </div>
+
+      <div class="lab">
+        <h3>Professional Skills</h3>
+        <ul>
+          <li><span class="tag-title">Technical Support:</span> Launch servers, troubleshoot hardware, escalate issues</li>
+          <li><span class="tag-title">Customer Service:</span> Support testing candidates under pressure</li>
+          <li><span class="tag-title">Multitasking:</span> Balance work, studies, and 25+ year export business</li>
         </ul>
       </div>
     </section>
 
-    <!-- Blog Section -->
+    <!-- Blog / Code Exercises -->
     <section id="blog" class="card page">
-      <h2>Networking Blog</h2>
-      <p>Sharing my networking journey, lab walkthroughs, and technical tips.</p>
+      <h2>Blog</h2>
+      <p>Beginner-friendly code and networking exercises I'm practicing.</p>
 
-      <div class="blog-post">
-        <h3><a href="blog-active-directory.html">My First Active Directory Lab - Complete Walkthrough</a></h3>
-        <p class="blog-meta">March 11, 2026 • 5 min read</p>
-        <p>Step-by-step guide to building a Windows domain from scratch: installing Windows Server, promoting to Domain Controller, creating OUs/users, and joining clients.</p>
+      <div class="lab">
+        <h3>Python: My Name in ASCII & Binary</h3>
+        <pre>
+name = "FATOUMATA"
+print("Name:", name)
+print("\nChar | ASCII | Binary (8-bit)")
+print("-" * 28)
+for char in name:
+    ascii_code = ord(char)
+    binary = format(ord(char), '08b')
+    print(f"{char}   |  {ascii_code:2d}  | {binary}")
+        </pre>
+        <p><strong>Output:</strong> F=70(01000110), A=65(01000001), T=84(01010100), O=79(01001111), U=85(01010101), M=77(01001101), A=65(01000001), T=84(01010100), A=65(01000001).</p>
       </div>
 
-      <div class="blog-post">
-        <h3><a href="blog-subnetting.html">IPv4 Subnetting for Beginners - CIDR Explained</a></h3>
-        <p class="blog-meta">March 8, 2026 • 7 min read</p>
-        <p>Practical examples of dividing /24 networks into efficient subnets for multi-department businesses with gateway assignments.</p>
+      <div class="lab">
+        <h3>Subnetting Exercise: Business Network</h3>
+        <table>
+          <tr><th>Department</th><th>Hosts</th><th>Subnet</th><th>Range</th><th>Gateway</th></tr>
+          <tr><td>Sales</td><td>60</td><td>/26</td><td>192.168.1.0-63</td><td>192.168.1.1</td></tr>
+          <tr><td>IT</td><td>25</td><td>/27</td><td>192.168.1.64-95</td><td>192.168.1.65</td></tr>
+          <tr><td>HR</td><td>12</td><td>/28</td><td>192.168.1.96-111</td><td>192.168.1.97</td></tr>
+        </table>
+        <p>Took 192.168.1.0/24 and split it into three subnets using VLSM.</p>
       </div>
 
-      <div class="blog-post">
-        <h3><a href="blog-vlan.html">VLANs & Trunking - Network Segmentation Done Right</a></h3>
-        <p class="blog-meta">Feb 25, 2026 • 6 min read</p>
-        <p>Cisco Packet Tracer demo: creating VLANs, trunk ports, native VLANs, and router-on-a-stick inter-VLAN routing.</p>
+      <div class="lab">
+        <h3>Python: IP Range Generator</h3>
+        <pre>
+network = "192.168.1"
+for i in range(1, 11):  # First 10 hosts
+    ip = f"{network}.{i}"
+    print(f"Host {i}: {ip}")
+        </pre>
+        <p><strong>Output:</strong> Host 1: 192.168.1.1, Host 2: 192.168.1.2, ... up to 192.168.1.10.</p>
       </div>
     </section>
 
@@ -498,12 +409,10 @@
     const pages = document.querySelectorAll(".page");
 
     function showPage(id) {
-      // Hide all pages first
       pages.forEach((p) => p.classList.remove("active-page"));
-      // Show target page
-      document.querySelector(id).classList.add("active-page");
-      
-      // Update active nav link
+      const target = document.querySelector(id);
+      if (target) target.classList.add("active-page");
+
       navLinks.forEach((link) => {
         link.classList.remove("active");
         if (link.getAttribute("href") === id) {
@@ -512,11 +421,9 @@
       });
     }
 
-    // Handle initial load with hash
     const initialHash = window.location.hash || "#home";
     showPage(initialHash);
 
-    // Navigation clicks
     navLinks.forEach((link) => {
       link.addEventListener("click", (e) => {
         const href = link.getAttribute("href");
@@ -526,6 +433,11 @@
           window.scrollTo({ top: 0, behavior: "smooth" });
         }
       });
+    });
+
+    window.addEventListener("hashchange", () => {
+      const hash = window.location.hash || "#home";
+      showPage(hash);
     });
   </script>
 </body>
