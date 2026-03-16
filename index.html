@@ -194,7 +194,7 @@
       color: var(--accent);
     }
 
-    /* FIXED TABLE - Complete gateway display */
+    /* Code / table */
     pre {
       background: #f5f5f5;
       padding: 1rem;
@@ -228,7 +228,7 @@
       font-size: 0.85rem;
     }
 
-    /* Mobile table - FIXED for complete gateway */
+    /* Mobile table */
     @media (max-width: 640px) {
       table {
         font-size: 0.82rem;
@@ -311,15 +311,14 @@
       </div>
 
       <p class="bio">
-        I am a certified Networking Systems & Technologies professional (Basic Networking Certificate, Dec 2025; AAS expected May 2026, 3.95 GPA) <strong>passionate about building reliable, secure networks</strong> that power modern businesses.
+        I am a certified Networking Systems & Technologies professional (Basic Networking Certificate, Dec 2025; AAS expected May 2026) passionate about building reliable, secure networks that power modern businesses.
         
         Before focusing on IT, I earned a Financial Accounting Technician diploma from Institut Universitaire de Gestion in Bamako, Mali, and gained practical experience in finance and tax administration. After relocating to the United States, I built entrepreneurial skills managing a family export business and worked as a Package Handler at UPS, developing precision and performance under pressure.
         
-        Currently, I work part-time as a Testing Specialist at Olive-Harvey College while completing my degree and pursuing CompTIA certifications. Fluent in English, French, and Bambara, I bring international perspective, <strong>dedication to technical excellence</strong>, and proven reliability to entry-level networking and IT support roles.
+        Currently, I work part-time as a Testing Specialist at Olive-Harvey College while completing my degree and pursuing CompTIA certifications. Fluent in English, French, and Bambara, I bring international perspective, dedication to technical excellence, and proven reliability to entry-level networking and IT support roles.
       </p>
 
       <div class="btn-row">
-        <a href="Biography.pdf" class="btn secondary" target="_blank" rel="noopener">Biography (PDF)</a>
         <a href="https://github.com/fbocoum1/Networking-portfolio" class="btn secondary" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
       </div>
     </section>
@@ -371,7 +370,7 @@
       </div>
     </section>
 
-    <!-- Blog / Code Exercises -->
+    <!-- Blog / Code Exercises (YOUR LATEST VERSION - FULLY REPLACED) -->
     <section id="blog" class="card page">
       <h2>Blog</h2>
       <p>Beginner-friendly code and networking exercises I'm practicing.</p>
@@ -379,17 +378,30 @@
       <div class="lab">
         <h3>Python: My Name in ASCII & Binary</h3>
         <pre>
+# Store my name in a string variable
 name = "FATOUMATA"
+
+# Print a title line that shows the name
 print("Name:", name)
-print("\\nChar | ASCII | Binary (8-bit)")
+
+# Print a blank line, then the header of the table
+print("\nChar | ASCII | Binary (8-bit)")
+
+# Print a separator line made of 28 dashes
 print("-" * 28)
+
+# Loop through each character in the string "name"
 for char in name:
+    # Convert the character to its ASCII code value (e.g., 'F' -> 70)
     ascii_code = ord(char)
+
+    # Convert the ASCII code to an 8-bit binary string (e.g., 70 -> 01000110)
     binary = format(ord(char), '08b')
+
+    # Print the character, its ASCII code, and its binary form in a formatted row
     print(f"{char}   |  {ascii_code:2d}  | {binary}")
         </pre>
         <p><strong>Output:</strong> F=70(01000110), A=65(01000001), T=84(01010100), O=79(01001111), U=85(01010101), M=77(01001101), A=65(01000001), T=84(01010100), A=65(01000001).</p>
-        <p>This script reinforces my understanding of ASCII and binary representations, which supports low-level networking and protocol concepts.</p>
       </div>
 
       <div class="lab">
@@ -400,16 +412,62 @@ for char in name:
           <tr><td>IT</td><td>25</td><td>/27</td><td>192.168.1.64-95</td><td>192.168.1.65</td></tr>
           <tr><td>HR</td><td>12</td><td>/28</td><td>192.168.1.96-111</td><td>192.168.1.97</td></tr>
         </table>
-        <p>This subnetting example demonstrates how I design efficient VLSM layouts for real-world business networks.</p>
+        <pre>
+# Starting network: 192.168.1.0/24  (256 total addresses: .0 to .255)
+
+# Department host requirements:
+# - Sales: 60 hosts
+# - IT:   25 hosts
+# - HR:   12 hosts
+
+# SALES SUBNET
+# 60 hosts -> needs 64 addresses (2^6 = 64, 62 usable)
+# So we choose a /26 mask.
+# First /26 in this /24 network:
+#   192.168.1.0  - 192.168.1.63
+#   Network address:   192.168.1.0
+#   Broadcast address: 192.168.1.63
+#   Usable host range: 192.168.1.1 - 192.168.1.62
+#   Chosen gateway IP: 192.168.1.1
+
+# IT SUBNET
+# 25 hosts -> needs 32 addresses (2^5 = 32, 30 usable)
+# So we choose a /27 mask.
+# Next free block after .63 starts at .64:
+#   192.168.1.64 - 192.168.1.95
+#   Network address:   192.168.1.64
+#   Broadcast address: 192.168.1.95
+#   Usable host range: 192.168.1.65 - 192.168.1.94
+#   Chosen gateway IP: 192.168.1.65
+
+# HR SUBNET
+# 12 hosts -> needs 16 addresses (2^4 = 16, 14 usable)
+# So we choose a /28 mask.
+# Next free block after .95 starts at .96:
+#   192.168.1.96  - 192.168.1.111
+#   Network address:   192.168.1.96
+#   Broadcast address: 192.168.1.111
+#   Usable host range: 192.168.1.97 - 192.168.1.110
+#   Chosen gateway IP: 192.168.1.97
+
+# This is VLSM: we split one 192.168.1.0/24 network into /26, /27, and /28
+# subnets so each department gets just enough addresses without wasting IPs.
+        </pre>
         <p>Took 192.168.1.0/24 and split it into three subnets using VLSM.</p>
       </div>
 
       <div class="lab">
         <h3>Python: IP Range Generator</h3>
         <pre>
+# Store the first three octets of the network as a string
 network = "192.168.1"
+
+# Loop through host numbers 1 to 10 (inclusive)
 for i in range(1, 11):  # First 10 hosts
+    # Build the full IP address by combining the network string and the host number
     ip = f"{network}.{i}"
+
+    # Print a line showing the host number and its corresponding IP address
     print(f"Host {i}: {ip}")
         </pre>
         <p><strong>Output:</strong> Host 1: 192.168.1.1, Host 2: 192.168.1.2, ... up to 192.168.1.10.</p>
